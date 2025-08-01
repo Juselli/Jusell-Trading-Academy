@@ -2053,118 +2053,140 @@ p {
     }
 } 
 
-/* Ultra-aggressive mobile fixes - UPDATED with larger text */
+/* Ultra-aggressive mobile fixes - MUCH LARGER text sizes */
 @media (max-width: 768px) {
-    /* Force hero to be much more compact but with readable text */
+    /* Force hero to be much more compact but with LARGE readable text */
     .hero {
         padding: 70px 0 20px !important;
-        min-height: 70vh !important; /* Ensure it doesn't take full screen */
+        min-height: 75vh !important;
     }
     
     .hero-container {
         padding: 10px 0 !important;
-        max-height: 65vh; /* Slightly more height for larger text */
-        overflow: visible; /* Allow content to show */
+        max-height: 70vh;
+        overflow: visible;
+        text-align: center !important; /* Center everything */
+    }
+    
+    .hero-content {
+        text-align: center !important; /* Ensure content is centered */
     }
     
     .hero-title {
-        font-size: 2.2rem !important; /* Larger title */
+        font-size: 3rem !important; /* MUCH larger title */
         line-height: 1.1 !important;
-        margin-bottom: 16px !important;
+        margin-bottom: 20px !important;
     }
     
     .hero-subtitle {
-        font-size: 15px !important; /* More readable subtitle */
-        margin-bottom: 20px !important;
+        font-size: 18px !important; /* Much larger subtitle */
+        margin-bottom: 24px !important;
         line-height: 1.4 !important;
     }
     
     .hero-stats {
-        gap: 16px !important;
-        margin-bottom: 20px !important;
+        gap: 20px !important;
+        margin-bottom: 24px !important;
+        justify-content: center !important; /* Center stats */
     }
     
     .stat-number {
-        font-size: 1.4rem !important; /* Bigger stats */
+        font-size: 1.8rem !important; /* Much bigger stats */
     }
     
     .stat-label {
-        font-size: 11px !important;
+        font-size: 13px !important; /* Larger labels */
     }
     
     .hero-cta {
-        gap: 14px !important;
-        margin-bottom: 16px !important;
+        gap: 16px !important;
+        margin-bottom: 20px !important;
+        justify-content: center !important; /* Center buttons */
+        align-items: center !important;
     }
     
     .btn {
-        padding: 12px 20px !important; /* Bigger buttons */
-        font-size: 14px !important;
-        min-height: 44px !important; /* Touch-friendly */
+        padding: 16px 24px !important; /* Much bigger buttons */
+        font-size: 16px !important; /* Larger button text */
+        min-height: 48px !important;
+        text-align: center !important;
     }
     
     .hero-guarantee {
-        font-size: 13px !important; /* More readable guarantee */
+        font-size: 15px !important; /* Much larger guarantee */
+        text-align: center !important;
     }
     
     .live-availability {
-        padding: 8px 12px !important;
-        margin: 12px 0 !important;
+        padding: 12px 16px !important;
+        margin: 16px 0 !important;
+        text-align: center !important;
     }
     
     .availability-status {
-        font-size: 12px !important; /* More readable */
+        font-size: 14px !important; /* Much more readable */
+        justify-content: center !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
         padding: 60px 0 15px !important;
-        min-height: 65vh !important; /* More height for content */
+        min-height: 70vh !important;
     }
     
     .hero-container {
         padding: 5px 0 !important;
-        max-height: 60vh !important;
+        max-height: 65vh !important;
         overflow: visible !important;
+        text-align: center !important;
     }
     
     .hero-title {
-        font-size: 1.8rem !important; /* Larger for small phones */
-        margin-bottom: 12px !important;
+        font-size: 2.5rem !important; /* Still very large on phones */
+        margin-bottom: 16px !important;
     }
     
     .hero-subtitle {
-        font-size: 13px !important; /* Readable on small screens */
-        margin-bottom: 16px !important;
+        font-size: 16px !important; /* Large and readable */
+        margin-bottom: 20px !important;
     }
     
     .hero-stats {
-        flex-direction: row !important; /* Keep horizontal */
-        gap: 12px !important;
-        margin-bottom: 16px !important;
-        justify-content: center;
+        flex-direction: row !important;
+        gap: 16px !important;
+        margin-bottom: 20px !important;
+        justify-content: center !important;
+        flex-wrap: wrap;
     }
     
     .stat {
-        min-width: 80px !important; /* Slightly bigger */
+        min-width: 90px !important;
     }
     
     .stat-number {
-        font-size: 1.2rem !important; /* Visible stats */
+        font-size: 1.5rem !important; /* Bigger phone stats */
     }
     
     .stat-label {
-        font-size: 9px !important;
+        font-size: 11px !important;
     }
     
     .btn {
-        padding: 12px 18px !important; /* Keep touch-friendly */
-        font-size: 13px !important;
+        padding: 14px 22px !important;
+        font-size: 15px !important; /* Large button text */
+        width: 100%;
+        max-width: 280px;
     }
     
     .hero-guarantee {
-        font-size: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .hero-cta {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px auto !important;
     }
 }
 
@@ -2172,25 +2194,25 @@ p {
 @media (max-width: 360px) {
     .hero {
         padding: 55px 0 10px !important;
-        min-height: 60vh !important;
+        min-height: 65vh !important;
     }
     
     .hero-title {
-        font-size: 1.6rem !important; /* Still readable */
+        font-size: 2.2rem !important; /* Still large on tiny screens */
     }
     
     .hero-subtitle {
-        font-size: 12px !important;
-        margin-bottom: 12px !important;
+        font-size: 14px !important;
+        margin-bottom: 16px !important;
     }
     
     .btn {
-        padding: 10px 16px !important;
-        font-size: 12px !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
     }
     
     .stat-number {
-        font-size: 1.1rem !important;
+        font-size: 1.3rem !important;
     }
 } 
 

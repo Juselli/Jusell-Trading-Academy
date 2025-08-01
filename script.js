@@ -39,7 +39,15 @@ function initNavigation() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 70; // Account for fixed navbar
+                // Calculate offset based on screen size
+                let offset = 70; // Default desktop navbar height
+                if (window.innerWidth <= 480) {
+                    offset = 65; // Small mobile navbar height + extra padding
+                } else if (window.innerWidth <= 768) {
+                    offset = 70; // Tablet mobile navbar height + extra padding
+                }
+                
+                const offsetTop = target.offsetTop - offset;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'

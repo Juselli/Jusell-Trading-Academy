@@ -201,6 +201,36 @@ p {
     height: 70px;
 }
 
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+    .nav-container {
+        height: 60px; /* Shorter navbar on mobile */
+        padding: 0 16px;
+    }
+    
+    .nav-logo {
+        font-size: 18px; /* Smaller logo on mobile */
+    }
+    
+    .nav-logo i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        height: 55px; /* Even shorter on small phones */
+    }
+    
+    .nav-logo {
+        font-size: 16px;
+    }
+    
+    .nav-logo i {
+        font-size: 18px;
+    }
+}
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -281,6 +311,55 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
+}
+
+/* Mobile hero fixes */
+@media (max-width: 768px) {
+    .hero {
+        padding: 90px 0 40px; /* Reduce top padding for mobile */
+        min-height: auto; /* Remove min-height constraint */
+        align-items: flex-start; /* Align to top instead of center */
+    }
+    
+    .hero-container {
+        padding-top: 20px; /* Add some top spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 0 30px; /* Even less padding on small screens */
+    }
+    
+    .hero-container {
+        padding-top: 10px;
+    }
+    
+    /* Ensure hero content fits in viewport */
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+        line-height: 1.4;
+    }
+    
+    .hero-stats {
+        margin-bottom: 24px;
+    }
+    
+    .hero-cta {
+        margin-bottom: 20px;
+    }
+    
+    .hero-guarantee {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
 }
 
 .hero-container {
@@ -1090,15 +1169,17 @@ p {
     }
 }
 
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
     :root {
         --section-padding: 60px 0;
     }
     
+    /* Navigation fixes */
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 60px; /* Match mobile navbar height */
         flex-direction: column;
         background: var(--secondary-bg);
         width: 100%;
@@ -1129,14 +1210,21 @@ p {
         transform: translateY(-6px) rotate(-45deg);
     }
     
+    /* Hero section mobile improvements - Override previous settings */
     .hero {
-        padding: 100px 0 60px;
-        min-height: auto;
+        padding: 90px 0 40px !important; /* Force override */
+        min-height: auto !important;
+        align-items: flex-start !important;
+    }
+    
+    .hero-container {
+        padding-top: 20px;
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Slightly larger than before */
         line-height: 1.2;
+        margin-bottom: 20px;
     }
     
     .hero-subtitle {
@@ -1148,14 +1236,17 @@ p {
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
+        margin-bottom: 30px;
     }
     
     .hero-cta {
         justify-content: center;
         flex-direction: column;
         gap: 16px;
+        margin-bottom: 24px;
     }
     
+    /* Button improvements */
     .btn {
         min-width: 140px;
         padding: 14px 24px;
@@ -1247,14 +1338,91 @@ p {
 }
 
 @media (max-width: 480px) {
+    /* Container and spacing */
     .container {
         padding: 0 16px;
     }
-    
+
     .nav-container {
         padding: 0 16px;
     }
     
+    /* Mobile navigation menu height adjustment */
+    .nav-menu {
+        top: 55px; /* Match small mobile navbar height */
+    }
+    
+    /* Hero section - ensure everything fits */
+    .hero {
+        padding: 75px 0 30px !important; /* Less padding for small screens */
+    }
+    
+    .hero-container {
+        padding-top: 10px;
+    }
+    
+    /* Typography scaling */
+    .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px !important;
+        margin-bottom: 24px !important;
+        line-height: 1.4;
+    }
+    
+    /* Hero stats - more compact */
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px !important;
+    }
+    
+    .stat {
+        min-width: 120px;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem; /* Smaller stats */
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    /* CTA buttons - more compact */
+    .hero-cta {
+        margin-bottom: 20px !important;
+        gap: 12px;
+    }
+    
+    .hero-guarantee {
+        font-size: 12px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Live availability more compact */
+    .live-availability {
+        padding: 8px 12px;
+        margin: 12px 0;
+    }
+    
+    .availability-status {
+        font-size: 11px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* Card padding */
     .contact-form-container {
         padding: 20px;
         margin: 0 4px;
@@ -1264,24 +1432,6 @@ p {
     .package-card,
     .testimonial-card {
         padding: 20px 16px;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 32px;
-    }
-    
-    .stat {
-        min-width: 120px;
-    }
-    
-    .stat-number {
-        font-size: 1.8rem;
-    }
-    
-    .stat-label {
-        font-size: 12px;
     }
     
     .package-header h3 {
@@ -1307,6 +1457,7 @@ p {
         gap: 12px;
     }
     
+    /* Form improvements */
     .form-group {
         margin-bottom: 20px;
     }
@@ -1318,12 +1469,14 @@ p {
         padding: 14px;
     }
     
+    /* Spots remaining mobile */
     .spots-remaining {
         font-size: 12px;
         padding: 6px 12px;
         margin: 12px 0;
     }
     
+    /* Navigation mobile menu items */
     .nav-menu li {
         margin: 8px 0;
     }

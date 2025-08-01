@@ -52,6 +52,12 @@
     --transition-slow: 0.5s ease;
 }
 
+/* Prevent horizontal scroll on mobile */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -62,6 +68,8 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     font-weight: var(--font-weight-normal);
+    -webkit-text-size-adjust: 100%; /* Prevent iOS text scaling */
+    -ms-text-size-adjust: 100%;
 }
 
 /* Container */
@@ -1098,6 +1106,7 @@ p {
         transition: 0.3s;
         box-shadow: var(--shadow-lg);
         padding: 20px 0;
+        z-index: 1001;
     }
     
     .nav-menu.active {
@@ -1125,22 +1134,39 @@ p {
         min-height: auto;
     }
     
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
     .hero-stats {
         justify-content: center;
         gap: 20px;
+        flex-wrap: wrap;
     }
     
     .hero-cta {
         justify-content: center;
+        flex-direction: column;
+        gap: 16px;
     }
     
     .btn {
         min-width: 140px;
         padding: 14px 24px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 280px;
     }
     
     .packages-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
     
     .package-popular {
@@ -1149,15 +1175,18 @@ p {
     
     .benefits-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
     
     .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 32px;
     }
     
     .footer-legal {
@@ -1168,6 +1197,52 @@ p {
     
     .legal-links {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .counter-content {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .availability-counter {
+        padding: 16px;
+        margin: 16px 0;
+    }
+    
+    .live-availability {
+        padding: 10px 12px;
+        margin: 16px 0;
+    }
+    
+    .availability-status {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .urgency-badge {
+        right: 10px;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    
+    .contact-methods {
+        margin-bottom: 32px;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .urgency-contact {
+        margin: 24px 0;
+    }
+    
+    .urgency-box {
+        padding: 16px;
+        text-align: center;
     }
 }
 
@@ -1181,22 +1256,106 @@ p {
     }
     
     .contact-form-container {
-        padding: 24px;
+        padding: 20px;
+        margin: 0 4px;
     }
     
     .benefit-card,
     .package-card,
     .testimonial-card {
-        padding: 24px 20px;
+        padding: 20px 16px;
     }
     
     .hero-stats {
         flex-direction: column;
         gap: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .stat {
+        min-width: 120px;
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+    
+    .package-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .price .amount {
+        font-size: 2.2rem;
+    }
+    
+    .professional-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .credentials {
+        gap: 24px;
+    }
+    
+    .credential {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 14px;
+    }
+    
+    .spots-remaining {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 12px 0;
+    }
+    
+    .nav-menu li {
+        margin: 8px 0;
+    }
+    
+    .nav-cta {
+        margin-top: 16px;
+        padding: 12px 20px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+    
+    .package-card {
+        margin: 0 8px;
+    }
+    
+    .contact-form-container {
+        padding: 16px;
+    }
+    
+    .professional-photo {
+        width: 160px;
+        height: 160px;
     }
 }
 
@@ -1663,5 +1822,80 @@ p {
     
     .notification-content i {
         font-size: 16px;
+    }
+} 
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+    /* Ensure touch targets are at least 44px */
+    .btn,
+    .nav-link,
+    .nav-cta,
+    .faq-question,
+    button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve spacing for touch */
+    .nav-menu li {
+        margin: 12px 0;
+    }
+    
+    .nav-menu .nav-link {
+        padding: 12px 20px;
+    }
+    
+    /* Fix text wrapping issues */
+    .hero-title,
+    .section-header h2 {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Improve form usability */
+    .form-group label {
+        pointer-events: none;
+        transition: all 0.2s ease;
+    }
+    
+    /* Better package card spacing */
+    .package-features li {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+    
+    /* Testimonial improvements */
+    .testimonial-card {
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* FAQ mobile improvements */
+    .faq-question {
+        padding: 20px 16px;
+        min-height: 60px;
+    }
+    
+    .faq-answer p {
+        padding: 0 16px 20px;
+        font-size: 14px;
+    }
+    
+    /* Live counter mobile adjustments */
+    .availability-status span {
+        font-size: 11px;
+    }
+    
+    /* Social links touch targets */
+    .social-links a {
+        min-width: 44px;
+        min-height: 44px;
     }
 } 

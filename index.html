@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master profitable trading strategies with our comprehensive education programs. Join successful traders who've transformed their financial future.">
+    <meta name="keywords" content="trading education, forex trading, stock trading, trading mentorship, financial education">
+    <title>Jusell Trading Academy - Master the Markets & Transform Your Financial Future</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Calendly Integration -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>Jusell Trading Academy</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                <li><a href="#packages" class="nav-link">Programs</a></li>
+                <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Book Free Call</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Master the Markets &<br>
+                    <span class="highlight">Transform Your Financial Future</span>
+                </h1>
+                <p class="hero-subtitle">
+                    I work exclusively with motivated individuals who are serious about developing their own trading style. Your experience level doesn't matter - your commitment to growth and willingness to challenge yourself does.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">Pro</span>
+                        <span class="stat-label">Trader</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Daily</span>
+                        <span class="stat-label">Active Coaching</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Private</span>
+                        <span class="stat-label">Discord Server</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <div class="live-availability">
+                        <div class="availability-status">
+                            <i class="fas fa-circle status-live"></i>
+                            <span>LIVE: <strong><span id="heroSpotsCount">1</span> spot remaining</strong> of 3 total</span>
+                        </div>
+                    </div>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jusell-work/30min'});return false;" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Free Consultation
+                    </a>
+                    <a href="#packages" class="btn btn-secondary">View Programs</a>
+                </div>
+                <p class="hero-guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    14-Day Money-Back Guarantee
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="trading-chart">
+                    <canvas id="heroChart" width="500" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Trust Us With Your Trading Education?</h2>
+                    <p class="section-subtitle">
+                        Full-time trader who works only with committed individuals ready to develop their unique approach to the markets
+                    </p>
+                    
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Full-Time Professional Trader</h4>
+                                <p>Successfully making a living from trading with consistent profitability and market expertise</p>
+                            </div>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h4>Personalized Strategy Development</h4>
+                                <p>Help each trader discover and develop their own unique trading style that fits their personality</p>
+                            </div>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4>Habit-Based Approach</h4>
+                                <p>Focus on building winning trading habits and mindset rather than copying someone else's system</p>
+                            </div>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Individual Mentorship Style</h4>
+                                <p>One-on-one guidance to help you find what works for YOU, not a one-size-fits-all approach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="professional-photo">
+                        <img src="Jusellpic.jpg" alt="Professional Trader Profile" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll Master in Our Program</h2>
+                <p>Transform from beginner to profitable trader with our comprehensive curriculum</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Trading Psychology & Habits</h3>
+                    <p>Build the mental framework and daily habits that separate successful traders from the rest</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Find Your Trading Style</h3>
+                    <p>Discover what type of trader you are and develop a personalized approach that fits your personality</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Risk Management</h3>
+                    <p>Learn to protect your capital and manage risk based on your individual risk tolerance and goals</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Market Analysis Skills</h3>
+                    <p>Develop your own analytical framework to read markets and identify opportunities</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Entry & Exit Discipline</h3>
+                    <p>Master the art of timing your trades and sticking to your rules without second-guessing</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Learn how to analyze your performance and continuously refine your approach for long-term success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Are You Ready for Serious Trading Development?</h2>
+                <p>I only work with motivated individuals who are committed to finding their own path. Time availability doesn't matter - your mindset and dedication do.</p>
+                <div class="availability-counter">
+                    <div class="counter-header">
+                        <i class="fas fa-users"></i>
+                        <span>LIVE AVAILABILITY</span>
+                    </div>
+                    <div class="counter-content">
+                        <div class="counter-item">
+                            <span class="counter-label">Maximum Students:</span>
+                            <span class="counter-number">3</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-label">Current Students:</span>
+                            <span class="counter-number">2</span>
+                        </div>
+                        <div class="counter-item critical">
+                            <span class="counter-label">Spots Available:</span>
+                            <span class="counter-number" id="spotsAvailable">1</span>
+                        </div>
+                    </div>
+                    <div class="counter-status">
+                        <i class="fas fa-circle status-indicator"></i>
+                        <span>Live availability tracking</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Trial Program -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Trial Program</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">249</span>
+                        </div>
+                        <p class="package-subtitle">2-Week Introduction</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Introduction to Trading Psychology</li>
+                        <li><i class="fas fa-check"></i> Discover Your Trading Personality</li>
+                        <li><i class="fas fa-check"></i> Basic Habit Building Framework</li>
+                        <li><i class="fas fa-check"></i> Email Support & Check-ins</li>
+                        <li><i class="fas fa-check"></i> Initial Assessment Session</li>
+                        <li><i class="fas fa-check"></i> 14-Day Money Back Guarantee</li>
+                        <li class="feature-limited"><i class="fas fa-times"></i> No Private Discord Server</li>
+                        <li class="feature-limited"><i class="fas fa-times"></i> No Daily Active Coaching</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Start Trial</a>
+                </div>
+                
+                <!-- Main Program -->
+                <div class="package-card package-popular">
+                    <div class="popular-badge">Complete Program</div>
+                    <div class="urgency-badge">
+                        <i class="fas fa-circle status-live"></i>
+                        <span id="packageSpotsCount">1</span> spot left
+                    </div>
+                    <div class="package-header">
+                        <h3>3-Month Trading Mastery</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">2,099</span>
+                        </div>
+                        <p class="package-subtitle">Complete Step-by-Step Program</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Full 3-Month Intensive Program</li>
+                        <li><i class="fas fa-check"></i> Develop YOUR Own Trading Style</li>
+                        <li><i class="fas fa-check"></i> Private Discord Server (Just You & Me)</li>
+                        <li><i class="fas fa-check"></i> Active Daily Trade Monitoring</li>
+                        <li><i class="fas fa-check"></i> Hands-On Coaching Every Day</li>
+                        <li><i class="fas fa-check"></i> Real-Time Trade Guidance</li>
+                        <li><i class="fas fa-check"></i> Multiple Daily Check-ins</li>
+                        <li><i class="fas fa-check"></i> Instant Feedback on Every Trade</li>
+                        <li><i class="fas fa-check"></i> Build Winning Habits Together</li>
+                        <li><i class="fas fa-check"></i> 14-Day Money Back Guarantee</li>
+                    </ul>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jusell-work/30min'});return false;" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Free Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories From Our Students</h2>
+                <p>Real results from real traders who followed our proven system</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Actually learned more about my own psychology than I expected. The Discord thing is pretty cool - he actually does check in regularly. Took me a while to find what works for me but that was kind of the point."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Joa R.</h4>
+                            <span>Completed 3-month program</span>
+                        </div>
+                        <div class="profit-badge">Improved</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Not gonna lie, was skeptical at first. But having someone actually look at your trades and point out patterns you don't see yourself is valuable. The habit stuff really does make a difference over time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Kirshma</h4>
+                            <span>Completed 3-month program</span>
+                        </div>
+                        <div class="profit-badge">Consistent</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Good program if you actually want to learn instead of just copying someone else's trades. He's pretty selective about who he works with - had to prove I was serious during the consultation. Worth it though, the personalized approach really works."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Doug</h4>
+                            <span>Completed 3-month program</span>
+                        </div>
+                        <div class="profit-badge">Disciplined</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our trading programs</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I need prior trading experience to join?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Experience level doesn't matter - I've worked with complete beginners and experienced traders. What matters is your motivation, commitment to learning, and willingness to challenge yourself. I'm selective about who I accept based on mindset, not background.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How much money do I need to start trading?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend starting with at least $1,000-$5,000 for live trading, but you can practice with paper trading (virtual money) while learning. The key is to start with money you can afford to lose while you're learning and growing your skills.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you guarantee profits?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We cannot guarantee profits as trading involves risk. However, we do guarantee that you'll receive comprehensive education and support. We offer a 14-day money-back guarantee if you're not satisfied with the program quality and content.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How much time do I need to commit?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Time availability isn't the deciding factor - your dedication is. Whether you have 30 minutes or 3 hours daily, what matters is that you're genuinely committed to growth and willing to put in consistent effort during whatever time you have available.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What markets do you teach?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I mainly trade futures myself, but the market doesn't matter. The principles I teach - psychology, risk management, and developing your own style - work across all markets: forex, stocks, crypto, commodities, and futures. You'll learn universal trading concepts that apply anywhere there's price movement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Think You're Ready to Work With Me?</h2>
+                    <p>I'm selective about who I work with. This consultation helps determine if you have the right mindset and motivation for serious trading development - regardless of your current experience level.</p>
+                    
+                    <div class="urgency-contact">
+                        <div class="urgency-box">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Limited Capacity - Quality Over Quantity</h4>
+                                <p>I intentionally limit myself to just 3 active students at any time. This ensures each person gets the dedicated attention and personalized coaching they need to succeed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>jusell.work@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>Within 2 hours (business days)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Book Your Free Consultation</h3>
+                        <div class="spots-remaining">
+                            <i class="fas fa-circle status-live"></i>
+                            <span><span id="formSpotsCount">1</span> spot remaining - Apply now!</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Full Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="program" name="program" required>
+                                <option value="">Select Your Interest</option>
+                                <option value="trial">Trial Program ($249)</option>
+                                <option value="program">3-Month Trading Program ($2,099)</option>
+                                <option value="consultation">Free Consultation Only</option>
+                                <option value="questions">I Have Questions</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4"></textarea>
+                            <label for="message">Tell us about your trading goals (optional)</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit" id="contactSubmit">
+                            <i class="fas fa-calendar-check"></i>
+                            Submit & Schedule Call
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Jusell Trading Academy</span>
+                    </div>
+                    <p>Transforming traders through proven education and mentorship since 2020.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#packages">Trial Program ($249)</a></li>
+                        <li><a href="#packages">3-Month Program ($2,099)</a></li>
+                        <li><a href="#benefits">What You'll Learn</a></li>
+                        <li><a href="#contact">Private Discord Server</a></li>
+                        <li><a href="#contact">Free Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#benefits">What You'll Learn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> jusell.work@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri 9AM-6PM EST</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Jusell Enterprises. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="disclaimer.html">Risk Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html> 

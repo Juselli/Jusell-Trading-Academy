@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initBackToTop();
     initLiveAvailability();
+    initMobileDebug(); // Add debug
 });
 
 // Navigation functionality
@@ -676,4 +677,20 @@ function initLiveAvailability() {
     setInterval(() => {
         addLoadingEffect();
     }, Math.random() * 30000 + 30000); // 30-60 seconds
+} 
+
+// Add mobile debug info
+function initMobileDebug() {
+    const debug = document.getElementById('mobileDebug');
+    if (!debug) return;
+    
+    function updateDebug() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        debug.textContent = `${width}x${height}px`;
+        debug.style.display = width <= 768 ? 'block' : 'none';
+    }
+    
+    updateDebug();
+    window.addEventListener('resize', updateDebug);
 } 

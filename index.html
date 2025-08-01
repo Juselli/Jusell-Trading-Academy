@@ -27,6 +27,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Temporary Mobile Debug (remove after testing) -->
+    <div id="mobileDebug" style="position: fixed; top: 0; left: 0; background: red; color: white; padding: 4px 8px; font-size: 10px; z-index: 9999; display: none;"></div>
+    
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -84,7 +87,7 @@
                             <span>LIVE: <strong><span id="heroSpotsCount">1</span> spot remaining</strong> of 3 total</span>
                         </div>
                     </div>
-                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jusell-work/30min'});return false;" class="btn btn-primary">
+                    <a href="#contact" class="btn btn-primary">
                         <i class="fas fa-calendar-alt"></i>
                         Book Free Consultation
                     </a>

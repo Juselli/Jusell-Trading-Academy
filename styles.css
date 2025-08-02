@@ -580,31 +580,48 @@ p {
     background: var(--secondary-bg);
 }
 
+/* Package Cards */
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 32px;
-    margin-top: 60px;
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .package-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius-lg);
-    border: 2px solid var(--border-color);
-    padding: 40px 32px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    border-radius: 15px;
+    padding: 2rem;
     text-align: center;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
     position: relative;
-    transition: all var(--transition-normal);
+    overflow: hidden;
 }
 
 .package-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
 .package-popular {
-    border-color: var(--accent-gold);
-    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #b8860b 100%);
+    color: #000;
+    padding: 8px 24px;
+    border-radius: 0 0 15px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 2;
 }
 
 .package-premium {
@@ -1286,11 +1303,6 @@ p {
         gap: 12px;
     }
     
-    .legal-links {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
     .counter-content {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1436,6 +1448,23 @@ p {
     
     .package-header h3 {
         font-size: 1.3rem;
+    }
+    
+    /* Fix popular badge overlap on mobile */
+    .package-header {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .package-popular .package-header {
+        margin-top: 2.5rem; /* Extra space for popular badge */
+    }
+    
+    .urgency-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+        top: 35px; /* Move down to avoid popular badge */
+        right: 8px;
     }
     
     .price .amount {
@@ -2188,6 +2217,11 @@ p {
         max-width: 300px;
         margin: 0 auto 20px auto !important;
     }
+    
+    .live-availability {
+        margin: 12px 15px !important;
+        padding: 8px 12px !important;
+    }
 }
 
 /* Emergency mobile fix for very small screens */
@@ -2387,6 +2421,23 @@ p {
     .live-availability {
         margin: 12px 15px !important;
         padding: 8px 12px !important;
+    }
+    
+    /* Package header spacing fixes for small screens */
+    .package-popular .package-header {
+        margin-top: 3rem; /* More space for popular badge on small screens */
+    }
+    
+    .urgency-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+        top: 32px; /* Adjust for smaller screens */
+        right: 6px;
+    }
+    
+    .popular-badge {
+        font-size: 11px;
+        padding: 5px 12px;
     }
 }
 

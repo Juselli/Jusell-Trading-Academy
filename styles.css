@@ -608,6 +608,7 @@ p {
 .package-popular {
     border: 2px solid var(--primary-color);
     position: relative;
+    padding-top: 20px;
 }
 
 .popular-badge {
@@ -1704,7 +1705,7 @@ p {
 
 .urgency-badge {
     position: absolute;
-    top: -12px;
+    top: 0px;
     right: 20px;
     background: var(--accent-red);
     color: white;
@@ -1714,6 +1715,7 @@ p {
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: 1px;
+    z-index: 10;
 }
 
 @keyframes blink {
@@ -1759,6 +1761,7 @@ p {
         right: 10px;
         font-size: 10px;
         padding: 4px 8px;
+        top: 0px;
     }
 } 
 

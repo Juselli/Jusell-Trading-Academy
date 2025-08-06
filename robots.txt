@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of certain files
+Disallow: /demo.html
+Disallow: /*.pdf
+Disallow: /Jusellpic_original.jpg
+
+# Sitemap location
+Sitemap: https://juselltradingacademy.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1 

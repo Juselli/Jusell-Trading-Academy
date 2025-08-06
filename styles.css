@@ -1705,7 +1705,7 @@ p {
 
 .urgency-badge {
     position: absolute;
-    top: 0px;
+    top: 35px;
     right: 20px;
     background: var(--accent-red);
     color: white;
@@ -1761,7 +1761,7 @@ p {
         right: 10px;
         font-size: 10px;
         padding: 4px 8px;
-        top: 0px;
+        top: 35px;
     }
 } 
 
@@ -2422,13 +2422,13 @@ p {
     
     /* Package header spacing fixes for small screens */
     .package-popular .package-header {
-        margin-top: 4rem; /* More space for popular badge on small screens - increased from 3rem */
+        margin-top: 40px;
     }
     
     .urgency-badge {
         font-size: 10px;
         padding: 3px 6px;
-        top: 32px; /* Adjust for smaller screens */
+        top: 35px; /* Adjust to prevent overlap with Complete Program badge */
         right: 6px;
     }
     

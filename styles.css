@@ -825,6 +825,11 @@ p {
     background: var(--tertiary-bg);
 }
 
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
 .faq-question h4 {
     margin: 0;
     font-size: 18px;

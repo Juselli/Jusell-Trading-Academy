@@ -1455,13 +1455,13 @@ p {
     }
     
     .package-popular .package-header {
-        margin-top: 3.5rem; /* Extra space for popular badge - increased from 2.5rem */
+        margin-top: 60px;
     }
     
     .urgency-badge {
         font-size: 11px;
         padding: 4px 8px;
-        top: 35px; /* Move down to avoid popular badge */
+        top: 0px; /* Back to top right corner */
         right: 8px;
     }
     
@@ -1705,7 +1705,7 @@ p {
 
 .urgency-badge {
     position: absolute;
-    top: 35px;
+    top: 0px;
     right: 20px;
     background: var(--accent-red);
     color: white;
@@ -1761,7 +1761,7 @@ p {
         right: 10px;
         font-size: 10px;
         padding: 4px 8px;
-        top: 35px;
+        top: 0px;
     }
 } 
 
@@ -2422,13 +2422,13 @@ p {
     
     /* Package header spacing fixes for small screens */
     .package-popular .package-header {
-        margin-top: 40px;
+        margin-top: 60px;
     }
     
     .urgency-badge {
         font-size: 10px;
         padding: 3px 6px;
-        top: 35px; /* Adjust to prevent overlap with Complete Program badge */
+        top: 0px; /* Back to top right corner */
         right: 6px;
     }
     

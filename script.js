@@ -11,6 +11,26 @@ document.addEventListener('DOMContentLoaded', function() {
     initLiveAvailability();
 });
 
+// Add CSS loaded detection to prevent FOUC
+function initCSSLoaded() {
+    // Check if CSS is loaded
+    if (document.readyState === 'complete') {
+        document.body.classList.add('css-loaded');
+    } else {
+        window.addEventListener('load', function() {
+            document.body.classList.add('css-loaded');
+        });
+    }
+    
+    // Fallback: Add class after a short delay to ensure CSS is loaded
+    setTimeout(function() {
+        document.body.classList.add('css-loaded');
+    }, 100);
+}
+
+// Initialize CSS loaded detection
+initCSSLoaded();
+
 // Navigation functionality
 function initNavigation() {
     const navbar = document.getElementById('navbar');

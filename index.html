@@ -150,7 +150,8 @@
     </script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="Jusellpic.jpg" as="image">
     
@@ -165,16 +166,41 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS to prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+        /* Critical styles to prevent white flash */
+        html, body {
+            background-color: #0a0a0a !important;
+            color: #ffffff !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+        }
+        
+        /* Hide content until CSS loads */
+        .navbar, .hero, .about, .benefits, .packages, .testimonials, .faq, .contact, .footer {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Show content when CSS is ready */
+        .css-loaded .navbar, .css-loaded .hero, .css-loaded .about, .css-loaded .benefits, .css-loaded .packages, .css-loaded .testimonials, .css-loaded .faq, .css-loaded .contact, .css-loaded .footer {
+            opacity: 1;
+        }
+        
+        /* Prevent layout shift */
+        * {
+            box-sizing: border-box !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->

@@ -1231,7 +1231,7 @@ p {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 60px; /* Match mobile navbar height */
+        top: 58px; /* Match adjusted mobile navbar height */
         flex-direction: column;
         background: var(--secondary-bg);
         width: 100%;
@@ -1396,7 +1396,7 @@ p {
     
     /* Mobile navigation menu height adjustment */
     .nav-menu {
-        top: 55px; /* Match small mobile navbar height */
+        top: 52px; /* Match adjusted small mobile navbar height */
     }
     
     /* Hero section - ensure everything fits */

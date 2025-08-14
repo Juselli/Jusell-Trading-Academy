@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeatureToggles();
     initCarousels();
     initFaqShowMore();
+    initQuizModal(); // Initialize quiz modal
 });
 
 // Add CSS loaded detection to prevent FOUC
@@ -700,6 +701,29 @@ function initFaqShowMore() {
         btn.textContent = expanded ? 'Show fewer questions' : 'Show more questions';
     });
 }
+
+// Modal: quiz iframe lazy loader
+(function initQuizModal(){
+	const openBtn = document.getElementById('openQuizModal');
+	const modal = document.getElementById('quizModal');
+	if(!openBtn || !modal) return;
+	const frame = document.getElementById('quizFrame');
+	const closeBtn = document.getElementById('closeQuizModal');
+	const backdrop = document.getElementById('quizModalBackdrop');
+	function open(){
+		if(frame && !frame.src) frame.src = 'quiz.html';
+		modal.setAttribute('aria-hidden','false');
+		document.body.style.overflow = 'hidden';
+	}
+	function close(){
+		modal.setAttribute('aria-hidden','true');
+		document.body.style.overflow = '';
+	}
+	openBtn.addEventListener('click', open);
+	closeBtn && closeBtn.addEventListener('click', close);
+	backdrop && backdrop.addEventListener('click', close);
+	window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.getAttribute('aria-hidden')==='false') close(); });
+})();
 
 // Performance optimization: Debounced scroll handler
 function debounce(func, wait) {

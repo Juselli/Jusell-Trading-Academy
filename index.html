@@ -374,6 +374,32 @@
     </section>
 
     <!-- Packages Section -->
+    <!-- Quiz Teaser Section -->
+    <section id="quiz-teaser" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Type of Trader Are You</h2>
+                <p>Take a short day trading personality test to get practical feedback on what to improve first and how I would coach you one to one.</p>
+            </div>
+            <div class="quiz-teaser-card">
+                <div class="quiz-teaser-content">
+                    <h3>Trader Personality Test</h3>
+                    <p class="quiz-teaser-sub">10 quick scenarios • ~3 minutes • Day trading focused</p>
+                    <ul class="quiz-teaser-points">
+                        <li><i class="fas fa-check"></i> Find your natural style</li>
+                        <li><i class="fas fa-check"></i> Get tailored actions to fix biggest leaks</li>
+                        <li><i class="fas fa-check"></i> See how 1 on 1 coaching would help you</li>
+                    </ul>
+                    <div class="quiz-teaser-cta">
+                        <button class="btn btn-primary" id="openQuizModal"><i class="fas fa-rocket"></i>Start Test</button>
+                        <a href="quiz.html" class="btn btn-secondary">Open Full Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
     <section id="packages" class="packages">
         <div class="container">
             <div class="section-header">
@@ -800,6 +826,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Quiz Modal (lazy loads quiz.html) -->
+    <div id="quizModal" class="modal" aria-hidden="true" role="dialog" aria-label="Trader Personality Test">
+        <div class="modal-backdrop" id="quizModalBackdrop"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" id="closeQuizModal" aria-label="Close quiz"><i class="fas fa-times"></i></button>
+            <iframe id="quizFrame" title="Trader Personality Test" loading="lazy"></iframe>
+        </div>
+    </div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">

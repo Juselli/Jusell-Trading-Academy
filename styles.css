@@ -2602,3 +2602,17 @@ section[id] { scroll-margin-top: 90px; }
         grid-template-columns: 1fr;
     }
 } 
+
+@supports (content-visibility: auto) {
+	#about,
+	#benefits,
+	#how-it-works,
+	#packages,
+	#testimonials,
+	#faq,
+	#contact,
+	footer {
+		content-visibility: auto;
+		contain-intrinsic-size: 800px;
+	}
+} 

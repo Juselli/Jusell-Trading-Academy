@@ -31,6 +31,30 @@ function initCSSLoaded() {
 // Initialize CSS loaded detection
 initCSSLoaded();
 
+// Lazy-load Calendly when needed
+let calendlyLoaded = false;
+function loadCalendlyAssets() {
+    return new Promise((resolve) => {
+        if (calendlyLoaded) { return resolve(); }
+        // inject CSS
+        const cssHref = 'https://assets.calendly.com/assets/external/widget.css';
+        if (!document.querySelector('link[href="'+cssHref+'"]')) {
+            const l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = cssHref;
+            document.head.appendChild(l);
+        }
+        // inject JS
+        const jsSrc = 'https://assets.calendly.com/assets/external/widget.js';
+        if (typeof Calendly !== 'undefined') {
+            calendlyLoaded = true; return resolve();
+        }
+        const s = document.createElement('script');
+        s.src = jsSrc; s.async = true; s.onload = function(){ calendlyLoaded = true; resolve(); };
+        document.head.appendChild(s);
+    });
+}
+
 // Persist UTM params for attribution and build Calendly URL with them
 (function persistUtmParams() {
     try {
@@ -249,15 +273,20 @@ function initContactForm() {
             // Show success notification
             showNotification('Information captured! Opening calendar...', 'success');
             
-            // Open Calendly popup after short delay with UTM
-            setTimeout(() => {
-                if (typeof Calendly !== 'undefined') {
+            // Open Calendly popup after lazy-loading assets
+            setTimeout(async () => {
+                try {
+                    await loadCalendlyAssets();
                     const urlWithUtm = buildCalendlyUrl('https://calendly.com/jusell-work/30min');
-                    Calendly.initPopupWidget({url: urlWithUtm});
-                } else {
+                    if (typeof Calendly !== 'undefined') {
+                        Calendly.initPopupWidget({ url: urlWithUtm });
+                    } else {
+                        showNotification('Calendar booking unavailable. Please contact us directly.', 'error');
+                    }
+                } catch (_) {
                     showNotification('Calendar booking unavailable. Please contact us directly.', 'error');
                 }
-            }, 1000);
+            }, 800);
             
             // Reset form
             form.reset();
@@ -375,6 +404,12 @@ function showNotification(message, type = 'info') {
 
 // Trading chart visualization
 function initTradingChart() {
+    // Skip on mobile or reduced motion
+    if (window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const chartContainer = document.querySelector('.trading-chart');
+        if (chartContainer) { chartContainer.style.display = 'none'; }
+        return;
+    }
     const canvas = document.getElementById('heroChart');
     if (!canvas) return;
 

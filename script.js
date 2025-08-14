@@ -31,6 +31,28 @@ function initCSSLoaded() {
 // Initialize CSS loaded detection
 initCSSLoaded();
 
+// Persist UTM params for attribution and build Calendly URL with them
+(function persistUtmParams() {
+    try {
+        const url = new URL(window.location.href);
+        const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+        const found = {};
+        utmKeys.forEach(k => { const v = url.searchParams.get(k); if (v) found[k] = v; });
+        if (Object.keys(found).length > 0) {
+            localStorage.setItem('utmParams', JSON.stringify(found));
+        }
+    } catch (_) {}
+})();
+
+function buildCalendlyUrl(baseUrl) {
+    let url = new URL(baseUrl);
+    try {
+        const saved = JSON.parse(localStorage.getItem('utmParams') || '{}');
+        Object.entries(saved).forEach(([k, v]) => url.searchParams.set(k, v));
+    } catch (_) {}
+    return url.toString();
+}
+
 // Navigation functionality
 function initNavigation() {
     const navbar = document.getElementById('navbar');
@@ -227,10 +249,11 @@ function initContactForm() {
             // Show success notification
             showNotification('Information captured! Opening calendar...', 'success');
             
-            // Open Calendly popup after short delay
+            // Open Calendly popup after short delay with UTM
             setTimeout(() => {
                 if (typeof Calendly !== 'undefined') {
-                    Calendly.initPopupWidget({url: 'https://calendly.com/jusell-work/30min'});
+                    const urlWithUtm = buildCalendlyUrl('https://calendly.com/jusell-work/30min');
+                    Calendly.initPopupWidget({url: urlWithUtm});
                 } else {
                     showNotification('Calendar booking unavailable. Please contact us directly.', 'error');
                 }

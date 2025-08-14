@@ -89,6 +89,30 @@
       ]
     }
     </script>
+
+    <!-- Service Schema for programs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Trial Trading Mentorship Program",
+      "provider": {"@type": "Organization", "name": "Jusell Trading Academy"},
+      "areaServed": "Worldwide",
+      "description": "Two-week foundation focused on psychology, routines, and risk basics.",
+      "offers": {"@type": "Offer", "price": "249", "priceCurrency": "USD"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "3-Month Daily Trading Mentorship",
+      "provider": {"@type": "Organization", "name": "Jusell Trading Academy"},
+      "areaServed": "Worldwide",
+      "description": "One-on-one coaching with daily Discord check-ins, live trade reviews, and habit-based improvement.",
+      "offers": {"@type": "Offer", "price": "2099", "priceCurrency": "USD"}
+    }
+    </script>
     
     <!-- FAQ Schema Markup -->
     <script type="application/ld+json">
@@ -96,87 +120,27 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do I need prior trading experience to join?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Experience level doesn't matter – what matters is your motivation, commitment to learning, and willingness to challenge yourself. I'm selective based on mindset, not background."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much money do I need to start trading?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can begin with paper trading while learning. For live trading, many start with $1,000–$5,000. Only use capital you can afford to risk while building skills."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you guarantee profits?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Trading involves risk and profits are never guaranteed. We provide education and support with a 14-day money-back guarantee on program satisfaction."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much time do I need to commit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Your dedication matters most. Whether you have 30 minutes or 3 hours daily, consistent effort and accountability drive progress."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What markets do you teach?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "I mainly trade futures, but the principles apply across forex, stocks, crypto, commodities, and futures – psychology, risk, and process are universal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens during the free consultation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We review your goals, schedule, and challenges to confirm fit. No pressure. Clear next steps either way."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is 1-on-1 trading mentorship good for beginners?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Beginners benefit from structured habit-building, risk management foundations, and daily feedback to avoid common mistakes early."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is daily Discord support structured?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You get a private Discord channel (just you and me) with daily check-ins, live trade reviews, and timely feedback."
-          }
-        }
+        {"@type": "Question","name": "Do I need prior trading experience to join?","acceptedAnswer": {"@type": "Answer","text": "Experience level doesn't matter – what matters is your motivation, commitment to learning, and willingness to challenge yourself. I'm selective based on mindset, not background."}},
+        {"@type": "Question","name": "How much money do I need to start trading?","acceptedAnswer": {"@type": "Answer","text": "You can begin with paper trading while learning. For live trading, many start with $1,000–$5,000. Only use capital you can afford to risk while building skills."}},
+        {"@type": "Question","name": "Do you guarantee profits?","acceptedAnswer": {"@type": "Answer","text": "No. Trading involves risk and profits are never guaranteed. We provide education and support with a 14-day money-back guarantee on program satisfaction."}},
+        {"@type": "Question","name": "How much time do I need to commit?","acceptedAnswer": {"@type": "Answer","text": "Your dedication matters most. Whether you have 30 minutes or 3 hours daily, consistent effort and accountability drive progress."}},
+        {"@type": "Question","name": "What markets do you teach?","acceptedAnswer": {"@type": "Answer","text": "I mainly trade futures, but the principles apply across forex, stocks, crypto, commodities, and futures – psychology, risk, and process are universal."}},
+        {"@type": "Question","name": "What happens during the free consultation?","acceptedAnswer": {"@type": "Answer","text": "We review your goals, experience, and constraints, and assess fit for the program. You'll leave with clear next steps, even if we decide not to proceed."}},
+        {"@type": "Question","name": "Is 1-on-1 trading mentorship good for beginners?","acceptedAnswer": {"@type": "Answer","text": "Yes. Beginners benefit from structured habit-building, risk management foundations, and daily feedback to avoid common mistakes early."}},
+        {"@type": "Question","name": "How is daily Discord support structured?","acceptedAnswer": {"@type": "Answer","text": "You get a private Discord channel (just you and me) with daily check-ins, live trade reviews, and timely feedback on decisions."}}
       ]
     }
     </script>
 
     <!-- Breadcrumbs Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://juselltradingacademy.com/"},
-        {"@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://juselltradingacademy.com/#how-it-works"},
-        {"@type": "ListItem", "position": 3, "name": "Programs", "item": "https://juselltradingacademy.com/#packages"},
-        {"@type": "ListItem", "position": 4, "name": "FAQ", "item": "https://juselltradingacademy.com/#faq"},
-        {"@type": "ListItem", "position": 5, "name": "Contact", "item": "https://juselltradingacademy.com/#contact"}
-      ]
-    }
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://juselltradingacademy.com/"},
+      {"@type":"ListItem","position":2,"name":"How It Works","item":"https://juselltradingacademy.com/#how-it-works"},
+      {"@type":"ListItem","position":3,"name":"Programs","item":"https://juselltradingacademy.com/#packages"},
+      {"@type":"ListItem","position":4,"name":"FAQ","item":"https://juselltradingacademy.com/#faq"},
+      {"@type":"ListItem","position":5,"name":"Contact","item":"https://juselltradingacademy.com/#contact"}
+    ]}
     </script>
 
     <!-- Google Analytics -->
@@ -215,30 +179,10 @@
 
     <!-- Critical CSS to prevent FOUC (Flash of Unstyled Content) -->
     <style>
-        /* Critical styles to prevent white flash */
-        html, body {
-            background-color: #0a0a0a !important;
-            color: #ffffff !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-        }
-        
-        /* Hide content until CSS loads */
-        .navbar, .hero, .about, .benefits, .packages, .testimonials, .faq, .contact, .footer {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Show content when CSS is ready */
-        .css-loaded .navbar, .css-loaded .hero, .css-loaded .about, .css-loaded .benefits, .css-loaded .packages, .css-loaded .testimonials, .css-loaded .faq, .css-loaded .contact, .css-loaded .footer {
-            opacity: 1;
-        }
-        
-        /* Prevent layout shift */
-        * {
-            box-sizing: border-box !important;
-        }
+        html, body { background-color: #0a0a0a !important; color: #ffffff !important; margin: 0 !important; padding: 0 !important; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
+        .navbar, .hero, main, .footer { opacity: 0; transition: opacity 0.3s ease; }
+        .css-loaded .navbar, .css-loaded .hero, .css-loaded main, .css-loaded .footer { opacity: 1; }
+        * { box-sizing: border-box !important; }
     </style>
 </head>
 <body>
@@ -266,101 +210,52 @@
             </div>
         </div>
     </nav>
-    
+
+    <main id="main-content">
     <!-- Hero Section -->
-    <section id="home" class="hero" role="main">
+    <section id="home" class="hero" role="region" aria-label="Hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    Daily Trading Mentorship
-                </h1>
-                <p class="hero-subtitle">
-                    Daily Trading Mentorship for serious traders who want personalized coaching from an active futures trader. Unlike courses, you get real-time guidance, daily check-ins, and 1-on-1 mentorship to develop your unique trading style.
-                </p>
+                <h1 class="hero-title">Daily Trading Mentorship</h1>
+                <p class="hero-subtitle">Daily Trading Mentorship for serious traders who want personalized coaching from an active futures trader. Unlike courses, you get real-time guidance, daily check-ins, and 1-on-1 mentorship to develop your unique trading style.</p>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">Pro</span>
-                        <span class="stat-label">Trader</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Daily</span>
-                        <span class="stat-label">Trading Coach</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Real-Time</span>
-                        <span class="stat-label">Guidance</span>
-                    </div>
+                    <div class="stat"><span class="stat-number">Pro</span><span class="stat-label">Trader</span></div>
+                    <div class="stat"><span class="stat-number">Daily</span><span class="stat-label">Trading Coach</span></div>
+                    <div class="stat"><span class="stat-number">Real-Time</span><span class="stat-label">Guidance</span></div>
                 </div>
                 <div class="hero-cta">
-                    <div class="live-availability">
-                        <div class="availability-status">
-                            <i class="fas fa-circle status-live"></i>
-                            <span>LIVE: <strong><span id="heroSpotsCount">1</span> spot remaining</strong> of 3 total</span>
-                        </div>
-                    </div>
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-calendar-alt"></i>
-                        Get Your Free Trading Mentorship Consultation
-                    </a>
+                    <div class="live-availability"><div class="availability-status"><i class="fas fa-circle status-live"></i><span>LIVE: <strong><span id="heroSpotsCount">1</span> spot remaining</strong> of 3 total</span></div></div>
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-alt"></i>Get Your Free Trading Mentorship Consultation</a>
                     <a href="#packages" class="btn btn-secondary">View Programs</a>
                 </div>
-                <p class="hero-guarantee">
-                    <i class="fas fa-shield-alt"></i>
-                    14-Day Money-Back Guarantee
-                </p>
+                <p class="hero-guarantee"><i class="fas fa-shield-alt"></i>14-Day Money-Back Guarantee</p>
             </div>
             <div class="hero-visual">
-                <div class="trading-chart">
-                    <canvas id="heroChart" width="500" height="300"></canvas>
-                </div>
+                <div class="trading-chart"><canvas id="heroChart" width="500" height="300"></canvas></div>
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" role="region" aria-label="About">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>Why Choose Active Trading Coaching Over Courses</h2>
-                    <p class="section-subtitle">
-                        Full-time futures trader providing personalized trading coaching programs with focus on trading habits development and risk management in trading education
-                    </p>
-                    
+                    <p class="section-subtitle">Full-time futures trader providing personalized trading coaching programs with focus on trading habits development and risk management in trading education</p>
                     <div class="credentials">
-                        <div class="credential">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Full-Time Professional Trader</h4>
-                                <p>Successfully making a living from trading with consistent profitability and market expertise</p>
-                            </div>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>Personalized Trading Coaching Programs</h4>
-                                <p>Help each trader discover and develop their own unique trading style that fits their personality</p>
-                            </div>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-trophy"></i>
-                            <div>
-                                <h4>Active Trading Mentor</h4>
-                                <p>Focus on building winning trading habits and mindset rather than copying someone else's system</p>
-                            </div>
-                        </div>
-                        <div class="credential">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h4>Trading Discipline Coaching</h4>
-                                <p>One-on-one guidance to help you find what works for YOU, not a one-size-fits-all approach</p>
-                            </div>
-                        </div>
+                        <div class="credential"><i class="fas fa-chart-line"></i><div><h4>Full-Time Professional Trader</h4><p>Successfully making a living from trading with consistent profitability and market expertise</p></div></div>
+                        <div class="credential"><i class="fas fa-lightbulb"></i><div><h4>Personalized Trading Coaching Programs</h4><p>Help each trader discover and develop their own unique trading style that fits their personality</p></div></div>
+                        <div class="credential"><i class="fas fa-trophy"></i><div><h4>Active Trading Mentor</h4><p>Focus on building winning trading habits and mindset rather than copying someone else's system</p></div></div>
+                        <div class="credential"><i class="fas fa-graduation-cap"></i><div><h4>Trading Discipline Coaching</h4><p>One-on-one guidance to help you find what works for YOU, not a one-size-fits-all approach</p></div></div>
                     </div>
                 </div>
                 <div class="about-image">
                     <div class="professional-photo">
-                        <img src="Jusellpic.jpg" alt="Jusell - Professional Trading Psychology Coach and Futures Trading Mentor" class="profile-image" loading="lazy" width="400" height="400">
+                        <picture>
+                            <source srcset="Jusellpic.webp" type="image/webp">
+                            <img src="Jusellpic.jpg" alt="Jusell - Professional Trading Psychology Coach and Futures Trading Mentor" class="profile-image" loading="lazy" decoding="async" width="400" height="400">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -814,6 +709,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

@@ -231,6 +231,7 @@ p {
     }
 }
 
+/* Navigation logo image */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -238,10 +239,14 @@ p {
     font-size: 24px;
     font-weight: var(--font-weight-bold);
     color: var(--accent-gold);
+    text-decoration: none;
 }
 
-.nav-logo i {
-    font-size: 28px;
+.nav-logo-img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -249,6 +254,7 @@ p {
     list-style: none;
     gap: 32px;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -286,6 +292,14 @@ p {
 .nav-cta:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
+}
+
+.nav-cta-wrap { margin-left: 8px; }
+@media (max-width: 1024px) {
+    .nav-menu { gap: 20px; }
+}
+@media (max-width: 900px) {
+    .nav-menu { gap: 16px; }
 }
 
 /* Mobile Navigation */
@@ -2554,4 +2568,14 @@ section[id] { scroll-margin-top: 90px; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { animation: none !important; transition: none !important; }
+} 
+
+/* How It Works grid fix: 2x2 on desktop, 1 column on mobile */
+#how-it-works .benefits-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+}
+@media (max-width: 768px) {
+    #how-it-works .benefits-grid {
+        grid-template-columns: 1fr;
+    }
 } 

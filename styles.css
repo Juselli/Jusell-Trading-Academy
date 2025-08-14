@@ -2715,3 +2715,41 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 		cursor: pointer; 
 	}
 } 
+
+/* Carousel styles for mobile one-card view */
+@media (max-width: 768px) {
+	#benefitsCarousel,
+	#testimonialsCarousel {
+		scroll-snap-type: x mandatory;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		gap: 16px;
+		padding-bottom: 8px;
+		/* Full-width slides */
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 100%;
+		margin: 0 -16px;
+		padding-left: 16px;
+	}
+	#benefitsCarousel::-webkit-scrollbar,
+	#testimonialsCarousel::-webkit-scrollbar { display: none; }
+	#benefitsCarousel > *,
+	#testimonialsCarousel > * { scroll-snap-align: start; }
+
+	.carousel-controls { 
+		display: flex; 
+		justify-content: space-between; 
+		margin: 8px 0 0 0; 
+		padding: 0 8px; 
+	}
+	.carousel-btn { 
+		background: var(--card-bg); 
+		color: var(--text-primary); 
+		border: 1px solid var(--border-color); 
+		border-radius: 10px; 
+		width: 44px; height: 36px; 
+		display: inline-flex; align-items: center; justify-content: center; 
+	}
+	.carousel-btn:active { transform: translateY(1px); }
+} 

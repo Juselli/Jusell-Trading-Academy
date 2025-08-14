@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initLiveAvailability();
     initFeatureToggles();
+    initCarousels();
 });
 
 // Add CSS loaded detection to prevent FOUC
@@ -650,6 +651,35 @@ function initFeatureToggles() {
             const expanded = features.classList.toggle('expanded');
             btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             btn.textContent = expanded ? 'Hide details' : 'Show full details';
+        });
+    });
+}
+
+// Mobile carousels: one-card view with buttons
+function initCarousels() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) return;
+
+    document.querySelectorAll('.carousel-controls').forEach(ctrl => {
+        const targetSel = ctrl.getAttribute('data-target');
+        const scroller = document.querySelector(targetSel);
+        if (!scroller) return;
+
+        const prevBtn = ctrl.querySelector('.carousel-btn.prev');
+        const nextBtn = ctrl.querySelector('.carousel-btn.next');
+
+        function slideWidth() {
+            // Use first child width or scroller width as fallback
+            const first = scroller.children[0];
+            const w = first ? first.getBoundingClientRect().width : scroller.getBoundingClientRect().width;
+            return Math.max(1, Math.round(w));
+        }
+
+        prevBtn.addEventListener('click', () => {
+            scroller.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            scroller.scrollBy({ left: slideWidth(), behavior: 'smooth' });
         });
     });
 }

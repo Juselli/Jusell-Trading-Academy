@@ -38,10 +38,29 @@ function initNavigation() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // ARIA for mobile toggle
+    if (navToggle && navMenu) {
+        navToggle.setAttribute('role', 'button');
+        navToggle.setAttribute('aria-controls', 'nav-menu');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navMenu.setAttribute('aria-hidden', 'true');
+    }
+
     // Mobile menu toggle
     navToggle.addEventListener('click', function() {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+        const expanded = navToggle.classList.contains('active');
+        navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        navMenu.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+    });
+
+    // Keyboard toggle support
+    navToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navToggle.click();
+        }
     });
 
     // Close mobile menu when clicking on a link
@@ -49,6 +68,8 @@ function initNavigation() {
         link.addEventListener('click', function() {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.setAttribute('aria-hidden', 'true');
         });
     });
 
@@ -56,7 +77,8 @@ function initNavigation() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
             if (target) {
                 // Calculate offset based on screen size
                 let offset = 70; // Default desktop navbar height
@@ -65,12 +87,17 @@ function initNavigation() {
                 } else if (window.innerWidth <= 768) {
                     offset = 70; // Tablet mobile navbar height + extra padding
                 }
-                
-                const offsetTop = target.offsetTop - offset;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                const targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: targetTop, behavior: 'smooth' });
+
+                // Update URL hash without jumping
+                history.replaceState(null, '', href);
+
+                // Move focus for accessibility after scroll
+                setTimeout(() => {
+                    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+                    target.focus({ preventScroll: true });
+                }, 600);
             }
         });
     });
@@ -79,13 +106,11 @@ function initNavigation() {
     function highlightCurrentSection() {
         const sections = document.querySelectorAll('section[id]');
         const scrollPos = window.scrollY + 100;
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
             if (navLink) {
                 if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                     navLink.classList.add('active');
@@ -95,7 +120,6 @@ function initNavigation() {
             }
         });
     }
-
     window.addEventListener('scroll', highlightCurrentSection);
 }
 
@@ -116,20 +140,42 @@ function initScrollEffects() {
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
 
-    faqItems.forEach(item => {
+    faqItems.forEach((item, index) => {
         const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', function() {
+        const answer = item.querySelector('.faq-answer');
+        const answerId = `faq-answer-${index + 1}`;
+        if (answer) answer.id = answerId;
+
+        // ARIA & keyboard
+        question.setAttribute('role', 'button');
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('aria-controls', answerId);
+        question.setAttribute('aria-expanded', 'false');
+        if (answer) answer.setAttribute('aria-hidden', 'true');
+
+        function toggleItem() {
             const isActive = item.classList.contains('active');
-            
             // Close all FAQ items
             faqItems.forEach(faqItem => {
                 faqItem.classList.remove('active');
+                const q = faqItem.querySelector('.faq-question');
+                const a = faqItem.querySelector('.faq-answer');
+                if (q) q.setAttribute('aria-expanded', 'false');
+                if (a) a.setAttribute('aria-hidden', 'true');
             });
-
             // Open clicked item if it wasn't active
             if (!isActive) {
                 item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+                if (answer) answer.setAttribute('aria-hidden', 'false');
+            }
+        }
+
+        question.addEventListener('click', toggleItem);
+        question.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleItem();
             }
         });
     });
@@ -586,6 +632,10 @@ document.addEventListener('click', function(e) {
         const buttonText = e.target.textContent.trim();
         const section = e.target.closest('section')?.id || 'unknown';
         trackEvent('Button Click', buttonText, section);
+    }
+    if (e.target.classList.contains('nav-cta')) {
+        const linkText = e.target.textContent.trim();
+        trackEvent('Nav CTA', linkText, 'header');
     }
 });
 

@@ -2503,3 +2503,55 @@ p {
     font-weight: 600;
     margin-bottom: 12px;
 } 
+
+/* Accessibility focus styles */
+:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.nav-cta:focus-visible,
+button:focus-visible,
+.faq-question:focus-visible,
+.footer-section a:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.15);
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+    padding: 10px 14px;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    z-index: 10000;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Anchor offset for fixed navbar */
+section[id] { scroll-margin-top: 90px; }
+@media (max-width: 768px) { section[id] { scroll-margin-top: 70px; } }
+@media (max-width: 480px) { section[id] { scroll-margin-top: 60px; } }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+} 

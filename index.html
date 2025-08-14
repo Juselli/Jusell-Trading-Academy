@@ -185,7 +185,10 @@
     <nav class="navbar" id="navbar" aria-label="Primary">
         <div class="nav-container">
             <a href="#home" class="nav-logo" aria-label="Jusell Trading Academy Home">
-                <img src="black-bull-logo.png" alt="Jusell Trading Academy logo" class="nav-logo-img" width="28" height="28">
+                <picture>
+                    <source srcset="black-bull-logo-32.png" media="(max-width: 768px)">
+                    <img src="black-bull-logo-64.png" alt="Jusell Trading Academy logo" class="nav-logo-img" width="28" height="28" loading="eager" decoding="async">
+                </picture>
                 <span>Jusell Trading Academy</span>
             </a>
             <ul class="nav-menu" id="nav-menu">
@@ -247,8 +250,8 @@
                 <div class="about-image">
                     <div class="professional-photo">
                         <picture>
-                            <source srcset="Jusellpic.webp" type="image/webp">
-                            <img src="Jusellpic.jpg" alt="Jusell - Professional Trading Psychology Coach and Futures Trading Mentor" class="profile-image" loading="lazy" decoding="async" width="400" height="400">
+                            <source srcset="Jusellpic-200.webp 200w, Jusellpic-300.webp 300w, Jusellpic-400.webp 400w" type="image/webp" sizes="(max-width: 480px) 200px, (max-width: 768px) 300px, 400px">
+                            <img src="Jusellpic-400.webp" alt="Jusell - Professional Trading Psychology Coach and Futures Trading Mentor" class="profile-image" loading="lazy" decoding="async" width="400" height="400">
                         </picture>
                     </div>
                 </div>

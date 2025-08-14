@@ -1224,7 +1224,7 @@ p {
 /* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
     :root {
-        --section-padding: 60px 0;
+        --section-padding: 44px 0;
     }
     
     /* Navigation fixes */
@@ -1264,7 +1264,7 @@ p {
     
     /* Hero section mobile improvements - Override previous settings */
     .hero {
-        padding: 90px 0 40px !important; /* Force override */
+        padding: 64px 0 24px !important; /* Force override */
         min-height: auto !important;
         align-items: flex-start !important;
     }

@@ -2619,3 +2619,35 @@ section[id] { scroll-margin-top: 90px; }
 
 /* Explicit heading size within sectioning elements (fix deprecation warning) */
 article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); } 
+
+/* Mobile cleanup: minimal, consistent rules for a cleaner look */
+@media (max-width: 768px) {
+	/* Hero: compact and centered */
+	.hero { padding: 68px 0 24px !important; min-height: auto !important; }
+	.hero-container { padding: 10px 0 !important; text-align: center !important; }
+	.hero-content { text-align: center !important; }
+	.hero-title { font-size: 2.2rem !important; line-height: 1.2 !important; margin-bottom: 16px !important; }
+	.hero-subtitle { font-size: 15px !important; line-height: 1.45 !important; margin: 0 auto 18px !important; max-width: 28ch; }
+	.hero-stats { display: none !important; }
+	.hero-cta { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
+	.btn { width: 100% !important; max-width: 320px !important; }
+	.hero-guarantee { font-size: 12px !important; }
+
+	/* Availability: stop blinking, subtle */
+	.status-indicator, .status-live { animation: none !important; }
+	.availability-status { font-size: 12px !important; }
+	.live-availability { margin: 10px auto 14px !important; }
+
+	/* Cards: lighter shadows and tighter gaps */
+	.benefit-card, .testimonial-card, .contact-form-container, .availability-counter { box-shadow: var(--shadow-sm) !important; }
+	.benefits-grid, .testimonials-grid { gap: 16px !important; }
+
+	/* Packages: remove overlapping badge, tidy spacing */
+	.popular-badge { display: none !important; }
+	.package-popular { padding-top: 12px !important; }
+	.urgency-badge { top: 8px !important; right: 10px !important; font-size: 10px !important; padding: 4px 8px !important; }
+	.package-header { margin-top: 8px !important; margin-bottom: 16px !important; }
+
+	/* Testimonials: remove italics for cleaner look */
+	.testimonial-content p { font-style: normal !important; }
+} 

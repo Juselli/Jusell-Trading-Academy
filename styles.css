@@ -2616,3 +2616,6 @@ section[id] { scroll-margin-top: 90px; }
 		contain-intrinsic-size: 800px;
 	}
 } 
+
+/* Explicit heading size within sectioning elements (fix deprecation warning) */
+article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); } 

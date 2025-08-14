@@ -743,18 +743,7 @@ window.addEventListener('error', function(e) {
     }
 });
 
-// Service Worker registration for PWA capabilities (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
+// Removed service worker registration to prevent 404 errors in Best Practices audit
 
 // Preload critical resources
 function preloadResources() {

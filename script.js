@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLiveAvailability();
     initFeatureToggles();
     initCarousels();
+    initFaqShowMore();
 });
 
 // Add CSS loaded detection to prevent FOUC
@@ -675,12 +676,33 @@ function initCarousels() {
             return Math.max(1, Math.round(w));
         }
 
+        // Ensure uniform child widths to avoid first-slide size mismatch
+        const uniformWidth = scroller.getBoundingClientRect().width;
+        Array.from(scroller.children).forEach(child => {
+            child.style.minWidth = uniformWidth + 'px';
+            child.style.maxWidth = uniformWidth + 'px';
+        });
+
         prevBtn.addEventListener('click', () => {
             scroller.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
         });
         nextBtn.addEventListener('click', () => {
             scroller.scrollBy({ left: slideWidth(), behavior: 'smooth' });
         });
+    });
+}
+
+// FAQ show-more toggle on mobile
+function initFaqShowMore() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const container = document.querySelector('.faq-container');
+    const btn = document.getElementById('faqMoreBtn');
+    if (!isMobile || !container || !btn) return;
+
+    btn.addEventListener('click', () => {
+        const expanded = container.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded ? 'Show fewer questions' : 'Show more questions';
     });
 }
 

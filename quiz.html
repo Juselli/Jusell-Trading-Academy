@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
-    <title>Trader Archetype Quiz | Jusell Trading Academy</title>
-    <meta name="description" content="Discover your trader archetype with 10 immersive scenarios. Reveal your strengths, blind spots, and next steps for one to one mentorship.">
+    <title>Trader Personality Test: What Type of Trader Are You? Jusell Trading Academy</title>
+    <meta name="description" content="Discover your trading personality with 10 immersive scenarios. Reveal your strengths, blind spots, and practical next steps for one to one mentorship.">
     <link rel="canonical" href="https://juselltradingacademy.com/quiz.html">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Trader Archetype Quiz | Jusell Trading Academy">
-    <meta property="og:description" content="Discover your trader archetype with 10 immersive scenarios. Reveal your strengths, blind spots, and next steps.">
+    <meta property="og:title" content="Trader Personality Test: What Type of Trader Are You? Jusell Trading Academy">
+    <meta property="og:description" content="Discover your trading personality with 10 immersive scenarios. Reveal your strengths, blind spots, and next steps.">
     <meta property="og:url" content="https://juselltradingacademy.com/quiz.html">
     <meta property="og:site_name" content="Jusell Trading Academy">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Trader Archetype Quiz | Jusell Trading Academy">
-    <meta name="twitter:description" content="Discover your trader archetype with 10 immersive scenarios.">
+    <meta name="twitter:title" content="Trader Personality Test: What Type of Trader Are You? Jusell Trading Academy">
+    <meta name="twitter:description" content="Discover your trading personality with 10 immersive scenarios.">
 
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -54,7 +54,7 @@
     <main id="main-content">
         <section class="quiz-hero" role="region" aria-label="Trader Archetype Quiz">
             <div class="container">
-                <h1>Discover Your Trader Archetype</h1>
+                <h1>What Type of Trader Are You</h1>
                 <p class="quiz-subtitle">Ten realistic scenarios help you find your natural approach to markets. Get a clear profile, specific strengths, common blind spots, and useful next steps. No theory. Practical clarity.</p>
             </div>
         </section>
@@ -151,14 +151,14 @@
                         <div class="quiz-actions">
                             <button type="button" class="btn btn-secondary" id="prevBtn">Previous</button>
                             <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
-                            <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">See Your Archetype</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">See Your Result</button>
                         </div>
                     </form>
                 </div>
 
                 <div id="quizResult" class="quiz-result" hidden>
                     <div class="quiz-result-header">
-                        <h2 id="resultTitle">Your Trader Archetype</h2>
+                        <h2 id="resultTitle">Your Trading Personality</h2>
                         <p id="resultSubtitle" class="result-subtitle"></p>
                     </div>
 
@@ -333,7 +333,7 @@
             const archetype = map[bestKey];
             const data = copy[archetype];
 
-            document.getElementById('resultTitle').textContent = archetype;
+            document.getElementById('resultTitle').textContent = archetype; // human friendly name
             document.getElementById('resultSubtitle').textContent = data.subtitle;
 
             function fillList(id, items){

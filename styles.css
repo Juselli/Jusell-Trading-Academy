@@ -2668,8 +2668,8 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 }
 
 @media (max-width: 360px) {
-	/* Extra compact: hide long brand text, keep accessible aria-label on link */
-	.nav-logo span { display: none !important; }
+	/* Extra compact: keep brand text but reduce size and allow ellipsis */
+	.nav-logo span { display: inline-block !important; font-size: 12px !important; max-width: calc(100vw - 160px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 } 
 
 /* Reduce vertical scroll on mobile: horizontal swipe lists + collapsible features */

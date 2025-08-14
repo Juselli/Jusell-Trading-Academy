@@ -261,9 +261,15 @@ p {
 
 .nav-logo-img {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
+}
+@media (max-width: 768px) {
+    .nav-logo-img {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .nav-menu {

@@ -27,7 +27,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Daily Trading Mentorship | Jusell Trading Academy">
-    <meta name="twitter:description" content="One-on-one trading mentorship from an active futures trader. Real-time coaching, daily Discord check-ins, and a habit-based approach.">
+    <meta name="twitter:description" content="One-on-one trading mentorship from an active futures trader.">
     <meta name="twitter:image" content="https://juselltradingacademy.com/Jusellpic.jpg">
     <meta name="twitter:image:alt" content="Jusell Trading Mentor – 1-on-1 Coaching">
     <meta name="twitter:site" content="@JJusell">
@@ -52,6 +52,7 @@
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
+      "@id": "https://juselltradingacademy.com/#organization",
       "name": "Jusell Trading Academy",
       "description": "Personalized, habit-based trading mentorship with real-time coaching and risk management.",
       "url": "https://juselltradingacademy.com",
@@ -71,33 +72,17 @@
         "@type": "Person",
         "name": "Jusell",
         "jobTitle": "Professional Trading Coach"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Trial Program",
-          "description": "2-week intensive trading foundation program",
-          "price": "249",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "name": "3-Month Mentorship Program",
-          "description": "Comprehensive one-on-one trading mentorship",
-          "price": "2099",
-          "priceCurrency": "USD"
-        }
-      ]
+      }
     }
     </script>
-
+    
     <!-- Service Schema for programs -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Trial Trading Mentorship Program",
-      "provider": {"@type": "Organization", "name": "Jusell Trading Academy"},
+      "provider": {"@id": "https://juselltradingacademy.com/#organization"},
       "areaServed": "Worldwide",
       "description": "Two-week foundation focused on psychology, routines, and risk basics.",
       "offers": {"@type": "Offer", "price": "249", "priceCurrency": "USD"}
@@ -108,7 +93,7 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "3-Month Daily Trading Mentorship",
-      "provider": {"@type": "Organization", "name": "Jusell Trading Academy"},
+      "provider": {"@id": "https://juselltradingacademy.com/#organization"},
       "areaServed": "Worldwide",
       "description": "One-on-one coaching with daily Discord check-ins, live trade reviews, and habit-based improvement.",
       "offers": {"@type": "Offer", "price": "2099", "priceCurrency": "USD"}
@@ -132,7 +117,7 @@
       ]
     }
     </script>
-
+    
     <!-- Breadcrumbs Schema -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -143,7 +128,7 @@
       {"@type":"ListItem","position":5,"name":"Contact","item":"https://juselltradingacademy.com/#contact"}
     ]}
     </script>
-
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S152FMJJK4"></script>
     <script>

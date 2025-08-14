@@ -675,13 +675,8 @@ function initCarousels() {
             const w = first ? first.getBoundingClientRect().width : scroller.getBoundingClientRect().width;
             return Math.max(1, Math.round(w));
         }
-
-        // Ensure uniform child widths to avoid first-slide size mismatch
-        const uniformWidth = scroller.getBoundingClientRect().width;
-        Array.from(scroller.children).forEach(child => {
-            child.style.minWidth = uniformWidth + 'px';
-            child.style.maxWidth = uniformWidth + 'px';
-        });
+ 
+        // Rely on CSS flex: 0 0 100% for uniform widths on mobile
 
         prevBtn.addEventListener('click', () => {
             scroller.scrollBy({ left: -slideWidth(), behavior: 'smooth' });

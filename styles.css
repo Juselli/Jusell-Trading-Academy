@@ -653,7 +653,7 @@ p {
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #b8860b 100%);
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb700 100%);
     color: #000;
     padding: 4px 12px;
     border-radius: 0 0 15px 15px;
@@ -2909,5 +2909,8 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 	.footer-logo { color: var(--accent-gold) !important; }
 	.stars i { color: var(--accent-gold) !important; }
 	.quiz-teaser-content h3 { color: var(--accent-gold) !important; }
-	.popular-badge { background: linear-gradient(135deg, var(--accent-gold), #b8860b) !important; color: #000 !important; }
+	.popular-badge { background: linear-gradient(135deg, var(--accent-gold), #ffb700) !important; color: #000 !important; }
+	/* Ensure calendar icons inherit dark text inside gold buttons */
+	.btn-primary i.fa-calendar-alt,
+	.btn-primary i.fa-calendar-check { color: var(--primary-bg) !important; }
 }

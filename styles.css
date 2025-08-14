@@ -2897,3 +2897,17 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 @media (max-width: 768px){
 	.modal-content { width: calc(100% - 24px); height: 80vh; margin: 60px auto 0; }
 }
+
+/* Ensure color consistency on mobile to match desktop */
+@media (max-width: 768px) {
+	/* Keep primary CTA gradient identical */
+	.btn-primary { background: linear-gradient(135deg, var(--accent-gold), #ffb700) !important; color: var(--primary-bg) !important; }
+	.btn-primary i { color: var(--primary-bg) !important; }
+	/* Keep key icons gold where used as brand accents */
+	.nav-logo { color: var(--accent-gold) !important; }
+	.credential i { color: var(--accent-gold) !important; }
+	.footer-logo { color: var(--accent-gold) !important; }
+	.stars i { color: var(--accent-gold) !important; }
+	.quiz-teaser-content h3 { color: var(--accent-gold) !important; }
+	.popular-badge { background: linear-gradient(135deg, var(--accent-gold), #b8860b) !important; color: #000 !important; }
+}

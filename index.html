@@ -129,20 +129,27 @@
     ]}
     </script>
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S152FMJJK4"></script>
+    <!-- Defer Google Analytics to idle -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-S152FMJJK4');
+      (function(){
+        function loadGA(){
+          var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-S152FMJJK4';
+          s.onload=function(){
+            window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-S152FMJJK4');
+          };
+          document.head.appendChild(s);
+        }
+        if('requestIdleCallback' in window){ requestIdleCallback(loadGA, {timeout:3000}); } else { window.addEventListener('load', function(){ setTimeout(loadGA, 2500); }); }
+      })();
     </script>
     
-    <!-- Preload critical resources -->
+    <!-- Preload critical CSS only -->
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="Jusellpic.jpg" as="image">
+    
+    <!-- Remove non-critical preloads for script and image to reduce initial bytes -->
+    <!-- <link rel="preload" href="script.js" as="script"> -->
+    <!-- <link rel="preload" href="Jusellpic.jpg" as="image"> -->
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -154,13 +161,15 @@
     <!-- Calendly Integration (lazy-loaded in script.js) -->
     <!-- removed blocking Calendly CSS/JS from head -->
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Async-load Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
-    <!-- Google Fonts with font-display: swap -->
+    <!-- Async-load Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Critical CSS to prevent FOUC (Flash of Unstyled Content) -->
     <style>

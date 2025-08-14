@@ -2671,3 +2671,47 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 	/* Extra compact: hide long brand text, keep accessible aria-label on link */
 	.nav-logo span { display: none !important; }
 } 
+
+/* Reduce vertical scroll on mobile: horizontal swipe lists + collapsible features */
+@media (max-width: 768px) {
+	/* Horizontal swipe for benefits */
+	.benefits-grid { 
+		display: grid !important; 
+		grid-auto-flow: column !important; 
+		grid-auto-columns: 85% !important; 
+		gap: 16px !important; 
+		overflow-x: auto !important; 
+		scroll-snap-type: x mandatory; 
+		padding-bottom: 8px; 
+		margin: 0 -16px; 
+		padding-left: 16px; 
+	}
+	.benefit-card { scroll-snap-align: start; }
+
+	/* Horizontal swipe for testimonials */
+	.testimonials-grid { 
+		display: grid !important; 
+		grid-auto-flow: column !important; 
+		grid-auto-columns: 85% !important; 
+		gap: 16px !important; 
+		overflow-x: auto !important; 
+		scroll-snap-type: x mandatory; 
+		padding-bottom: 8px; 
+		margin: 0 -16px; 
+		padding-left: 16px; 
+	}
+	.testimonial-card { scroll-snap-align: start; }
+
+	/* Collapsible package features */
+	.package-features { max-height: 240px; overflow: hidden; transition: max-height 0.3s ease; }
+	.package-features.expanded { max-height: 1000px; }
+	.features-toggle { 
+		margin-top: 8px; 
+		background: transparent; 
+		color: var(--accent-gold); 
+		border: none; 
+		font-size: 14px; 
+		text-decoration: underline; 
+		cursor: pointer; 
+	}
+} 

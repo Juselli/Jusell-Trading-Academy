@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initBackToTop();
     initLiveAvailability();
+    initFeatureToggles();
 });
 
 // Add CSS loaded detection to prevent FOUC
@@ -635,6 +636,20 @@ function initBackToTop() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    });
+}
+
+// Package features toggle for mobile
+function initFeatureToggles() {
+    const toggles = document.querySelectorAll('.features-toggle');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const features = btn.previousElementSibling;
+            if (!features || !features.classList.contains('package-features')) return;
+            const expanded = features.classList.toggle('expanded');
+            btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            btn.textContent = expanded ? 'Hide details' : 'Show full details';
         });
     });
 }

@@ -184,6 +184,9 @@
         * { box-sizing: border-box !important; }
         /* Explicit h1 size in sectioning contexts to satisfy deprecation */
         article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
+        /* Home: tighten vertical rhythm */
+        #benefits, #how-it-works, #packages, #from-academy, #testimonials, #faq, #contact { padding-top: 56px; padding-bottom: 56px; }
+        @media (max-width: 768px){ #benefits, #how-it-works, #packages, #from-academy, #testimonials, #faq, #contact { padding-top: 36px; padding-bottom: 36px; } }
     </style>
 </head>
 <body>

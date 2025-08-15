@@ -69,10 +69,10 @@
 		<table aria-label="Position sizing example">
 			<thead><tr><th>Input</th><th>Example</th></tr></thead>
 			<tbody>
-				<tr><td>Single‑trade risk ($)</td><td>$20</td></tr>
-				<tr><td>Stop distance</td><td>5 ticks</td></tr>
+				<tr><td>Single‑trade risk ($)</td><td>$60</td></tr>
+				<tr><td>Stop distance</td><td>12 ticks</td></tr>
 				<tr><td>Value per tick</td><td>$1.25</td></tr>
-				<tr><td>Size = risk / (stop*value)</td><td>$20 / (5*$1.25) = 3.2 → 3 contracts</td></tr>
+				<tr><td>Size = risk / (stop*value)</td><td>$60 / (12*$1.25) = 4.0 → 4 contracts</td></tr>
 			</tbody>
 		</table>
 		<p class="note">Round down size. If size is zero, widen stop only if it still fits the setup, or skip the trade.</p>
@@ -88,9 +88,9 @@
 		<table aria-label="Risk examples">
 			<thead><tr><th>Scenario</th><th>Risk ($)</th><th>Stop</th><th>Tick value</th><th>Size</th></tr></thead>
 			<tbody>
-				<tr><td>Micro futures trend pullback</td><td>20</td><td>6 ticks</td><td>1.25</td><td>2–3</td></tr>
-				<tr><td>Forex major pair</td><td>10</td><td>10 pips</td><td>$1 per pip (0.1 lot)</td><td>0.1 lot</td></tr>
-				<tr><td>Equity day trade</td><td>25</td><td>$0.25</td><td>$0.01 per share</td><td>100 shares</td></tr>
+				<tr><td>Micro futures trend pullback (MES)</td><td>60</td><td>12 ticks</td><td>$1.25</td><td>4 contracts</td></tr>
+				<tr><td>Forex major pair (EURUSD)</td><td>50</td><td>20 pips</td><td>$1 per pip (per 0.1 lot)</td><td>0.25 lot</td></tr>
+				<tr><td>Equity day trade</td><td>100</td><td>$0.50</td><td>$1/share per $1 move</td><td>200 shares</td></tr>
 			</tbody>
 		</table>
 

@@ -30,6 +30,9 @@
 		.card { background:#0f0f0f; border:1px solid #1e1e1e; border-radius:10px; padding:14px 16px }
 		.list { margin:8px 0 0 18px }
 		.small { color:#b8b8b8; font-size:12px }
+		.template-actions { display:flex; gap:10px; align-items:center; margin:10px 0 }
+		.template-actions input { background:#0f0f0f; border:1px solid #262626; border-radius:8px; padding:10px; color:#eaeaea; width:220px }
+		pre.template-box { background:#0a0a0a; border:1px solid #1e1e1e; border-radius:10px; padding:14px; white-space:pre-wrap; word-wrap:break-word }
 	</style>
 </head>
 <body>
@@ -57,6 +60,14 @@
 		<div class="kv">
 			<p style="margin:0">Use this weekly template to keep your analysis consistent. 15 minutes, every weekend.</p>
 		</div>
+
+		<section class="card">
+			<h2>0) Instruments Focus</h2>
+			<ul class="list">
+				<li>Choose 1–2 symbols (e.g., ES/MES, NQ/MNQ, CL/MCL, GC/MGC)</li>
+				<li>Why focus this week: volatility / liquidity / events</li>
+			</ul>
+		</section>
 
 		<section class="card">
 			<h2>1) Trend Context</h2>
@@ -112,6 +123,17 @@
 			<p class="small">Keep screenshots. Two per lesson is enough.</p>
 		</section>
 
+		<section class="card">
+			<h2>Weekly Template (Copy & Paste)</h2>
+			<div class="template-actions">
+				<label for="weekInput" class="small">Week of</label>
+				<input id="weekInput" type="text" placeholder="YYYY-MM-DD">
+				<button id="copyTemplate" class="btn btn-secondary">Copy template</button>
+			</div>
+			<pre id="templateText" class="template-box"></pre>
+			<p class="small">Paste into your journal/Discord. Update as you go during the week.</p>
+		</section>
+
 		<div class="kv">
 			<p style="margin:0 0 10px">Want a review call to refine your weekly plan?</p>
 			<a class="btn btn-primary" href="index.html#contact"><i class="fas fa-calendar-check"></i>Get Your Free Trading Mentorship Consultation</a>
@@ -134,5 +156,64 @@
 	</div>
 </footer>
 <script src="script.js" defer></script>
+<script>
+(function(){
+	var weekInput = document.getElementById('weekInput');
+	var pre = document.getElementById('templateText');
+	var btn = document.getElementById('copyTemplate');
+	if(!pre) return;
+	var tpl = [
+		'Week: {{WEEK}}',
+		'',
+		'Instruments:',
+		'- Primary: ____________',
+		'- Secondary: ____________',
+		'',
+		'1) Trend Context',
+		'- Weekly/Daily: ____________',
+		'- Relative to value/MAs: ____________',
+		'- Volatility regime: ____________',
+		'',
+		'2) Key Levels',
+		'- Prior week H/L: ____________',
+		'- Value/VWAP: ____________',
+		'- Event levels: ____________',
+		'',
+		'3) Scenarios',
+		'- Primary (confirmations): ____________',
+		'- Alternate (invalidations): ____________',
+		'- Fail-case (avoid chop): ____________',
+		'',
+		'4) Setups to Focus (2 only)',
+		'- Setup A (context/trigger/stop/target): ____________',
+		'- Setup B (context/trigger/stop/target): ____________',
+		'',
+		'5) Risk Plan',
+		'- Single-trade risk: ____________',
+		'- Max daily loss: ____________',
+		'- News risk days: ____________',
+		'',
+		'6) Lessons From This Week',
+		'- Keep: ____________',
+		'- Fix: ____________',
+		'- One rule to improve: ____________'
+	].join('\n');
+	function update(){
+		var w = (weekInput && weekInput.value) ? weekInput.value : 'YYYY-MM-DD';
+		pre.textContent = tpl.replace(/\{\{WEEK\}\}/g, w);
+	}
+	update();
+	if(weekInput){ weekInput.addEventListener('input', update); }
+	if(btn){
+		btn.addEventListener('click', function(){
+			try {
+				navigator.clipboard.writeText(pre.textContent).then(function(){
+					var old = btn.textContent; btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = old; }, 1200);
+				});
+			} catch(e){}
+		});
+	}
+})();
+</script>
 </body>
 </html> 

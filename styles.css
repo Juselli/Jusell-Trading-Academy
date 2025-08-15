@@ -2928,3 +2928,12 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 	.faq-container .faq-item { display: block !important; }
 	.faq-more-btn { display: none !important; }
 }
+
+/* Improve contrast for content links */
+.section-header p a, .legal-note a, .footer a { color: #ffd700; text-decoration: underline; }
+.section-header p a:hover, .legal-note a:hover, .footer a:hover { color: #ffea80; }
+/* Ensure urgency badge text contrast */
+.urgency-badge { background: #b00020; color: #ffffff; }
+/* Touch target sizing improvements */
+.footer-section ul li a { padding: 8px 6px; display: inline-flex; align-items: center; min-height: 44px; }
+.form-group input, .form-group select, .form-group textarea { min-height: 44px; }

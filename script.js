@@ -96,6 +96,21 @@ function initNavigation() {
         navMenu.setAttribute('aria-hidden', 'true');
     }
 
+    function updateNavAriaForViewport(){
+        if (!navMenu) return;
+        const isDesktop = window.innerWidth > 768;
+        if (isDesktop) {
+            navMenu.setAttribute('aria-hidden', 'false');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            const active = navMenu.classList.contains('active');
+            navMenu.setAttribute('aria-hidden', active ? 'false' : 'true');
+            if (navToggle) navToggle.setAttribute('aria-expanded', active ? 'true' : 'false');
+        }
+    }
+    updateNavAriaForViewport();
+    window.addEventListener('resize', debounce(updateNavAriaForViewport, 150));
+
     // Mobile menu toggle
     navToggle.addEventListener('click', function() {
         navToggle.classList.toggle('active');

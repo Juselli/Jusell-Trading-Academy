@@ -24,7 +24,18 @@
 		table { width:100%; border-collapse: collapse; margin:12px 0; font-size: 14px }
 		th, td { border-bottom: 1px solid #222; padding:10px 8px; text-align:left }
 		.note { color:#b8b8b8; font-size: 13px }
-		.article a { color: #f5c84c; text-decoration: none }
+		/* Link color inside content, but do not affect buttons */
+		.article a:not(.btn) { color: #f5c84c; text-decoration: none }
+		/* Ensure CTA button text/icons are dark on gold background */
+		.article .btn, .article .btn-primary { color:#0a0a0a !important }
+		.article .btn i, .article .btn-primary i { color:#0a0a0a !important }
+		/* Prettier article UI */
+		.eyebrow { color:#b8b8b8; font-size:13px; margin:4px 0 18px; display:flex; gap:10px; align-items:center }
+		.badge { display:inline-flex; align-items:center; gap:6px; background:#131313; border:1px solid #242424; border-radius:999px; padding:4px 10px; font-size:12px; color:#cfcfcf }
+		.badge i { color:#f5c84c }
+		.callout { background:#0f0f0f; border:1px solid #1e1e1e; border-left:3px solid #f5c84c; border-radius:10px; padding:14px 16px; margin:14px 0; color:#d0d0d0 }
+		thead th { color:#dcdcdc }
+		tbody tr:nth-child(odd) { background:#0f0f0f }
 	</style>
 </head>
 <body>
@@ -49,12 +60,25 @@
 	<article class="article container">
 		<p><a href="academy.html" style="color:#b8b8b8;text-decoration:none">Academy</a> / Reference</p>
 		<h1>How Many Trading Days in a Year</h1>
+		<div class="eyebrow">
+			<span class="badge"><i class="fas fa-book-open"></i> Reference</span>
+			<span>Updated Aug 2025</span>
+		</div>
 		<p>US stock markets are typically open Monday through Friday, excluding federal holidays and unexpected closures. That means the number of trading days changes slightly by year (leap years, holiday placement, and one‑off observances).</p>
 
 		<div class="kv">
 			<h2 style="margin:0 0 6px">Quick Answer</h2>
 			<p style="margin:0">Most years: <strong>252 trading days</strong>. Range: <strong>250–254</strong> depending on holidays and weekends.</p>
 			<p class="note">Futures and some markets have different session hours and holiday rules. This guide focuses on NYSE/Nasdaq regular sessions.</p>
+		</div>
+
+		<div class="callout">
+			<strong>Key takeaways:</strong>
+			<ul style="margin:8px 0 0 18px">
+				<li>Plan around ~21 sessions per month and ~63 per quarter</li>
+				<li>Holiday placement can shift the yearly count by a few days</li>
+				<li>Use the count to set realistic review and risk cadences</li>
+			</ul>
 		</div>
 
 		<h2>Recent Years</h2>

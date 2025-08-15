@@ -258,6 +258,8 @@ p {
     color: var(--accent-gold);
     text-decoration: none;
 }
+/* Keep brand on a single line on desktop */
+.nav-logo span { white-space: nowrap; display: inline-block; }
 
 .nav-logo-img {
     display: block;

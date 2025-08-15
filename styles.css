@@ -2914,3 +2914,15 @@ article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 	.btn-primary i.fa-calendar-alt,
 	.btn-primary i.fa-calendar-check { color: var(--primary-bg) !important; }
 }
+
+/* Desktop-specific overrides */
+@media (min-width: 769px) {
+	/* Hide mobile carousels' arrow controls on desktop */
+	.carousel-controls { display: none !important; }
+	/* Show full package features on desktop; hide the mobile toggle */
+	.package-features { max-height: none !important; overflow: visible !important; }
+	.features-toggle { display: none !important; }
+	/* Show all FAQ items on desktop; hide the mobile show-more button */
+	.faq-container .faq-item { display: block !important; }
+	.faq-more-btn { display: none !important; }
+}

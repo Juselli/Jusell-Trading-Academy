@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeatureToggles();
     initCarousels();
     initFaqShowMore();
-    initQuizModal(); // Initialize quiz modal
+    // Quiz modal is initialized via IIFE later in this file
 });
 
 // Add CSS loaded detection to prevent FOUC

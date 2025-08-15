@@ -23,6 +23,7 @@
 		html, body { background:#0a0a0a; color:#fff; margin:0; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 		.navbar, main, .footer { opacity:0; transition:opacity .3s ease }
 		.css-loaded .navbar, .css-loaded main, .css-loaded .footer { opacity:1 }
+		article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
 		.academy-hero { padding: 88px 0 28px }
 		.academy-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 10px }
 		.academy-hero p { color:#cfcfcf; margin: 0 }
@@ -190,6 +191,16 @@
   var loaded=false; function gate(){ if(loaded) return; loaded=true; if('requestIdleCallback' in window){ requestIdleCallback(loadGA,{timeout:3000}); } else { setTimeout(loadGA,1500); } }
   ['click','scroll','keydown','touchstart'].forEach(function(ev){ window.addEventListener(ev, gate, { once:true, passive:true }); });
   setTimeout(gate, 7000);
+})();
+</script>
+<script>
+(function(){
+  var link = document.getElementById('faStyles');
+  if (link && window.innerWidth <= 768) {
+    var loaded=false; function loadFA(){ if(loaded) return; loaded=true; link.media='all'; }
+    ['click','scroll','keydown','touchstart'].forEach(function(ev){ window.addEventListener(ev, loadFA, { once:true, passive:true }); });
+    setTimeout(loadFA, 10000);
+  }
 })();
 </script>
 </body>

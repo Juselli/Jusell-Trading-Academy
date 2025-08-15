@@ -166,12 +166,9 @@
     <!-- Calendly Integration (lazy-loaded in script.js) -->
     <!-- removed blocking Calendly CSS/JS from head -->
     
-    <!-- Async-load Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
+    <!-- Font Awesome (desktop immediate, mobile on interaction) -->
     <link id="faStyles" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="(min-width: 769px)">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    <link rel="preload" as="font" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" crossorigin>
     
     <!-- Async-load Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,6 +182,8 @@
         .navbar, .hero, main, .footer { opacity: 0; transition: opacity 0.3s ease; }
         .css-loaded .navbar, .css-loaded .hero, .css-loaded main, .css-loaded .footer { opacity: 1; }
         * { box-sizing: border-box !important; }
+        /* Explicit h1 size in sectioning contexts to satisfy deprecation */
+        article h1, aside h1, nav h1, section h1 { font-size: clamp(2rem, 5vw, 3rem); }
     </style>
 </head>
 <body>
@@ -853,5 +852,17 @@
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
+    <script>
+    (function(){
+      // Lazy-load Font Awesome on mobile only after interaction
+      var link = document.getElementById('faStyles');
+      if (link && window.innerWidth <= 768) {
+        var loaded=false;
+        function loadFA(){ if(loaded) return; loaded=true; link.media='all'; }
+        ['click','scroll','keydown','touchstart'].forEach(function(ev){ window.addEventListener(ev, loadFA, { once:true, passive:true }); });
+        setTimeout(loadFA, 10000);
+      }
+    })();
+    </script>
 </body>
 </html> 

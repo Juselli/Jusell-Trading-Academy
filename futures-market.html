@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+	<title>Futures Market: How It Works, Hours, Leverage, Costs, and How to Start</title>
+	<meta name="description" content="A practical guide to the futures market for day traders: how contracts work, trading hours, leverage and margins, costs, risk, and a realistic way to start (ES/MES, NQ/MNQ).">
+	<link rel="canonical" href="https://juselltradingacademy.com/futures-market.html">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Futures Market: How It Works, Hours, Leverage, Costs, and How to Start">
+	<meta property="og:description" content="Understand the futures market step by step: contracts, hours, leverage, margins, costs, risks, and a realistic path to start trading ES/NQ futures.">
+	<meta property="og:url" content="https://juselltradingacademy.com/futures-market.html">
+	<meta property="og:site_name" content="Jusell Trading Academy">
+	<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="styles.css"></noscript>
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+	<style>
+		html, body { background:#0a0a0a; color:#fff; margin:0; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif }
+		main { opacity:0; transition:opacity .3s ease }
+		.css-loaded main { opacity:1 }
+		.article { padding: 88px 0 28px }
+		.article h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 12px }
+		.article h2 { margin: 22px 0 10px; font-size: 1.35rem }
+		.article h3 { margin: 16px 0 8px; font-size: 1.1rem }
+		.article p { color:#d0d0d0 }
+		.kv { background:#111; border:1px solid #1f1f1f; border-radius:10px; padding:16px; margin:16px 0 }
+		.note { color:#b8b8b8; font-size: 13px }
+		.article a:not(.btn) { color: #f5c84c; text-decoration: none }
+		.article .btn, .article .btn-primary { color:#0a0a0a !important }
+		.article .btn i, .article .btn-primary i { color:#0a0a0a !important }
+		.eyebrow { color:#b8b8b8; font-size:13px; margin:4px 0 18px; display:flex; gap:10px; align-items:center; flex-wrap:wrap }
+		.badge { display:inline-flex; align-items:center; gap:6px; background:#131313; border:1px solid #242424; border-radius:999px; padding:4px 10px; font-size:12px; color:#cfcfcf }
+		.badge i { color:#f5c84c }
+		.grid-2 { display:grid; gap:16px; grid-template-columns: repeat(2, minmax(0,1fr)); }
+		@media(max-width: 800px){ .grid-2{ grid-template-columns: 1fr } }
+		.callout { background:#0f0f0f; border:1px solid #1e1e1e; border-left:3px solid #f5c84c; border-radius:10px; padding:14px 16px; margin:14px 0; color:#d0d0d0 }
+		.table { width:100%; border-collapse: collapse; margin:12px 0; font-size: 14px }
+		.table th, .table td { border-bottom: 1px solid #222; padding:10px 8px; text-align:left }
+		.table thead th { color:#dcdcdc }
+		.table tbody tr:nth-child(odd) { background:#0f0f0f }
+		.caption { color:#b8b8b8; font-size:12px; margin-top:4px }
+	</style>
+</head>
+<body>
+<script>(function(){ if(document.readyState==='complete'){document.body.classList.add('css-loaded')} else { window.addEventListener('load', function(){ document.body.classList.add('css-loaded') }); } setTimeout(function(){ document.body.classList.add('css-loaded') }, 150); })();</script>
+<nav class="navbar" id="navbar" aria-label="Primary">
+	<div class="nav-container">
+		<a href="academy.html" class="nav-logo" aria-label="Academy Home">
+			<img src="black-bull-logo-64.png" alt="Jusell Trading Academy logo" class="nav-logo-img" width="28" height="28">
+			<span>Academy</span>
+		</a>
+		<ul class="nav-menu" id="nav-menu">
+			<li><a href="index.html#home" class="nav-link">Home</a></li>
+			<li><a href="academy.html" class="nav-link">Academy</a></li>
+			<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+			<li class="nav-cta-wrap"><a href="index.html#contact" class="nav-cta">Book Free Call</a></li>
+		</ul>
+		<div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+	</div>
+</nav>
+
+<main id="main-content">
+	<article class="article container">
+		<p><a href="academy.html" style="color:#b8b8b8;text-decoration:none">Academy</a> / Markets</p>
+		<h1>The Futures Market: A Practical Guide for Day Traders</h1>
+		<div class="eyebrow">
+			<span class="badge"><i class="fas fa-chart-line"></i> Markets</span>
+			<span>Updated Aug 2025</span>
+		</div>
+
+		<div class="kv">
+			<h2 style="margin:0 0 6px">What is the futures market?</h2>
+			<p style="margin:0">An exchange where standardized contracts trade to buy/sell an underlying asset at a future date. For day traders, it’s a liquid, regulated venue with clear tick sizes, centralized order books, and near‑24h trading.</p>
+		</div>
+
+		<h2>How Futures Contracts Work</h2>
+		<div class="grid-2">
+			<div>
+				<h3>Key Concepts</h3>
+				<ul class="checklist">
+					<li>Contract specs: tick size, tick value, minimum price fluctuation</li>
+					<li>Notional value: price × contract multiplier</li>
+					<li>Cash vs physical settlement; front month vs rollover</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Popular Equity Index Futures</h3>
+				<table class="table" aria-label="Equity index futures tick values">
+					<thead><tr><th>Symbol</th><th>Contract</th><th>Tick</th><th>Tick Value</th></tr></thead>
+					<tbody>
+						<tr><td>ES</td><td>E‑mini S&P 500</td><td>0.25</td><td>$12.50</td></tr>
+						<tr><td>MES</td><td>Micro E‑mini S&P 500</td><td>0.25</td><td>$1.25</td></tr>
+						<tr><td>NQ</td><td>E‑mini Nasdaq‑100</td><td>0.25</td><td>$5.00</td></tr>
+						<tr><td>MNQ</td><td>Micro E‑mini Nasdaq‑100</td><td>0.25</td><td>$0.50</td></tr>
+					</tbody>
+				</table>
+				<p class="caption">Tip: Start on micros (MES/MNQ) to learn execution with realistic stops and small risk.</p>
+			</div>
+		</div>
+
+		<h2>Futures Market Hours and Sessions</h2>
+		<p>US index futures trade nearly 24 hours (Sunday evening to Friday evening), with most volume during Regular Trading Hours (RTH).</p>
+		<table class="table" aria-label="Futures market hours">
+			<thead><tr><th>Session</th><th>Typical Time (ET)</th><th>Notes</th></tr></thead>
+			<tbody>
+				<tr><td>ETH (Overnight)</td><td>6:00 pm – 9:30 am</td><td>Quieter; news/data can spike moves</td></tr>
+				<tr><td>RTH (Cash Session)</td><td>9:30 am – 4:00 pm</td><td>Highest liquidity and participation</td></tr>
+				<tr><td>Post‑RTH</td><td>4:00 pm – 5:00 pm</td><td>Thin; many brokers close for maintenance</td></tr>
+			</tbody>
+		</table>
+		<p class="caption">Holidays and early closes change times. Check your broker’s calendar.</p>
+
+		<h2>Leverage and Margin Explained</h2>
+		<ul>
+			<li><strong>Initial vs maintenance margin:</strong> the minimum to open/hold a position.</li>
+			<li><strong>Day trade margin:</strong> broker‑specific discount for intraday trading—use carefully.</li>
+			<li><strong>Risk reality:</strong> size positions from stop distance and a fixed dollar risk, not conviction.</li>
+		</ul>
+		<div class="callout">Example: With a $50 risk per trade on MES, a 6‑tick stop (=$7.50) allows up to 6 contracts ($45 risk) if spreads/liquidity are normal. Size down when volatility widens.</div>
+
+		<h2>Costs: What You Actually Pay</h2>
+		<ul>
+			<li>Commissions + exchange/clearing fees</li>
+			<li>Data fees (real‑time quotes)</li>
+			<li>Slippage and spread (varies by time of day and news)</li>
+		</ul>
+		<p class="note">Focus on reducing poor fills from chasing, not just broker fees.</p>
+
+		<h2>Why Trade Futures vs Stocks/Forex</h2>
+		<div class="grid-2">
+			<div>
+				<h3>Pros</h3>
+				<ul class="checklist">
+					<li>Centralized order books and transparent tick values</li>
+					<li>Capital efficiency with defined margin</li>
+					<li>Near‑24h trading and clean tax treatment in some regions</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Cons</h3>
+				<ul class="checklist">
+					<li>Leverage punishes mistakes faster</li>
+					<li>Rollover and contract selection to manage</li>
+					<li>Thin liquidity in off‑hours on some products</li>
+				</ul>
+			</div>
+		</div>
+
+		<h2>ES vs MES, NQ vs MNQ: Which to Start With</h2>
+		<ul>
+			<li><strong>Start:</strong> MES or MNQ. Build execution skill with small dollar risk.</li>
+			<li><strong>Personality fit:</strong> ES is steadier; NQ moves faster with larger swings.</li>
+			<li><strong>Graduation:</strong> scale to ES/NQ only when rules are consistently followed.</li>
+		</ul>
+
+		<h2>Rollover and Contract Selection</h2>
+		<ul>
+			<li>Trade the contract with the most volume/open interest (usually front month).</li>
+			<li>On rollover week, watch spreads and consider waiting for volume to migrate.</li>
+			<li>Update your charts and symbols to the new contract.</li>
+		</ul>
+
+		<h2>Getting Started (Simple Path)</h2>
+		<ol>
+			<li>Open a futures‑enabled brokerage account and platform.</li>
+			<li>Trade MES/MNQ on simulator for mechanics; then tiny size live.</li>
+			<li>Pick one setup; define context, trigger, stop, and target.</li>
+			<li>Risk a fixed small amount per trade; stop at your daily loss limit.</li>
+			<li>Review daily with screenshots; weekly summary and one rule to improve.</li>
+		</ol>
+
+		<h2>FAQs</h2>
+		<h3>Do I need a lot of capital to trade futures?</h3>
+		<p>No. Micros allow realistic practice with small risk. Focus on skill before size.</p>
+		<h3>What’s the best time to trade ES/NQ?</h3>
+		<p>RTH around the open (first 60–90 minutes) concentrates liquidity and movement. Avoid major news unless it’s part of your plan.</p>
+		<h3>Is futures trading riskier than stocks?</h3>
+		<p>Leverage makes risk show up faster. With fixed risk per trade and rules, you can control it.</p>
+
+		<div class="kv">
+			<p style="margin:0 0 10px">Want a plan tailored to ES/NQ?</p>
+			<a class="btn btn-primary" href="index.html#contact"><i class="fas fa-calendar-check"></i>Get Your Free Trading Mentorship Consultation</a>
+			<p class="caption">Or start with the <a href="quiz.html">Trader Personality Test</a> to find your natural style.</p>
+		</div>
+	</article>
+</main>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-bottom">
+			<div class="footer-legal">
+				<p>&copy; 2025 Jusell Enterprises. All rights reserved.</p>
+				<div class="legal-links">
+					<a href="privacy.html">Privacy Policy</a>
+					<a href="terms.html">Terms of Service</a>
+					<a href="disclaimer.html">Risk Disclaimer</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="script.js" defer></script>
+<script type="application/ld+json">{
+	"@context":"https://schema.org",
+	"@type":"Article",
+	"headline":"Futures Market: How It Works, Hours, Leverage, Costs, and How to Start",
+	"description":"A practical guide to the futures market for day traders: how contracts work, trading hours, leverage and margins, costs, risk, and a realistic way to start (ES/MES, NQ/MNQ).",
+	"author":{"@type":"Person","name":"Jusell"},
+	"publisher":{"@type":"Organization","name":"Jusell Trading Academy"},
+	"mainEntityOfPage":{"@type":"WebPage","@id":"https://juselltradingacademy.com/futures-market.html"}
+}</script>
+</body>
+</html> 
